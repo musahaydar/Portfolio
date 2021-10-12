@@ -1,0 +1,70 @@
+.body {
+    width: 256px;
+    margin: auto;
+    margin-top: 128px;
+}
+
+.body_header {
+    font-family: 'IBM Plex Sans', sans-serif;
+    text-align: center;
+    line-height: 10px;
+}
+
+.links {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: large;
+    line-height: 10px;
+}
+
+.right {
+    float: right;
+}
+
+.left {
+    float: left;
+}
+
+#header_img {
+    width: 50%;
+    height: 50%;
+    /* Prevent image blurring */
+    -ms-transform: translateZ(0); /* IE 9 */
+    -webkit-transform: translateZ(0); /* Chrome, Safari, Opera */
+    transform: translateZ(0);
+}
+
+hr {
+    height: 1px; 
+    background: black;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+h3 {
+    text-align: center;
+}
+
+.about {
+    width: 512px;
+    margin: auto;
+    margin-top: 90px;
+}
+
+.about_body {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: large;
+    line-height: 26px;
+}
+
+.embed_img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 50%;
+    height: 50%;
+    border-radius: 6px;
+}
