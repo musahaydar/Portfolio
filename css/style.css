@@ -16,6 +16,20 @@
     line-height: 10px;
 }
 
+.description {
+    float: right;
+}
+
+.icons {
+    text-align: center;
+    word-spacing: 20px;
+}
+
+.icon_img {
+    width: 36px;
+    height: 36px;
+}
+
 .right {
     float: right;
 }
