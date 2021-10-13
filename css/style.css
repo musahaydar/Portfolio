@@ -14,6 +14,13 @@
     font-family: 'IBM Plex Sans', sans-serif;
     font-size: 125%;
     line-height: 10px;
+    font-weight: bold;
+}
+
+.links_small {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 100%;
+    line-height: 10px;
 }
 
 .description {
