@@ -2,7 +2,7 @@
     {
         "file": "portfolio",
         "name": "Portfolio Website",
-        "body": "I finally updated my portfolio website to have a list of projects. Currently, it\"s a static website, with pages for each project generated using Python and Jinja.",
+        "body": "I finally updated my portfolio website with list of projects. Currently, it's a static website. The content for each project's page is stored in JSON, and the pages are generated using Python and Jinja.",
         "links": [
             {
                 "url": "https://github.com/musahaydar/Portfolio",
@@ -13,12 +13,195 @@
     {
         "file": "ex_animo",
         "name": "Ex Animo",
-        "body": "",
+        "body": "Ex Animo is a selection of songs I created when I was learning how to compose music. Some of the tracks date back as early as 2017. Of course, I cleaned them quite up a bit, but you can tell I had a minimal understanding of music theory at the time. Most of the songs were created in FL Studio, but a few were made in LMMS.",
         "links": [
             {
                 "url": "https://musahaydar.bandcamp.com/album/ex-animo",
                 "text": "[0] listen on bandcamp"
             }
         ]
+    },
+    {
+        "file": "crowds",
+        "name": "Crowds!",
+        "body": "Crowds! is a puzzle game about getting people indoors. It was made for the 2021 WolverineSoft Summer Game Jam, where the theme was \"You don't have to go home, but you can't stay here.\" I created the music, artwork, and programmed the game, and Logan Hughes created all of the game's sound effects. Crowds! won first place.</p><p>Crowds! is played by placing \"impostors\" on the board, which affect the people around them. The goal is to get all the people off the board in as few turns and using as few impostors as possible.</p><p>The game is more of a proof of concept, since I didn’t implement a way to share a puzzle so that more than one person can try to optimize a solution. The rules are also rather complicated, and a proper tutorial would help.",
+        "links": [
+            {
+                "url": "https://musahaydar.itch.io/crowds",
+                "text": "[0] download the game on Itch.io"
+            },
+            {
+                "url": "https://logan-hughes.com/",
+                "text": "[1] check out Logan Hughes' work"
+            }
+        ]
+    },
+    {
+        "file": "witchtale_soundtrack",
+        "name": "Witchtale Soundtrack",
+        "body": "As part of the video game music course at UMich, I had the opportunity to compose music for a team in EECS 494, the game development course. I worked with the team creating Witchtale, a retro-inspired platformer game. To match the aesthetic, I composed four tracks of chiptune-inspired music.",
+        "links": [
+            {
+                "url": "https://musahaydar.bandcamp.com/album/witchtale-soundtrack",
+                "text": "[0] listen on bandcamp"
+            },
+            {
+                "url": "https://pentaclestudio.itch.io/witchtale",
+                "text":"[1] download Witchtale on Itch.io"
+            }
+        ]
+    },
+    {
+        "file": "false_alarm",
+        "name": "False Alarm",
+        "body": "False alarm was created by a team of nine in 48 hours for the WolverineSoft 2021 Shammy Game Jam. The theme was \"What could go wrong?\" and my role for this game was programming. I worked on implementing some of the puzzle's mechanics and their user interfaces. False Alarm won first place.",
+        "links": [
+            {
+                "url": "https://kapitha.itch.io/false-alarm",
+                "text":"[0] download the game on Itch.io"
+            }
+        ]
+    },
+    {
+        "file": "homelost",
+        "name": "Homelost",
+        "body": "Homelost is a twin-stick shooter game created for the 2021 Global Game Jam. The game was created in 48 hours, and the theme was \"Lost & Found.\" With Homelost, my focus was on the game feel and the enemies' animations.",
+        "links": [
+            {
+                "url": "https://musahaydar.itch.io/homelost",
+                "text": "[0] download the game on Itch.io"
+            }
+        ]
+    },
+    {
+        "file": "demo_2020",
+        "name": "Demo 2020",
+        "body": "Demo 2020 is a demo album containing some of my favorite compositions from the year.",
+        "links": [
+            {
+                "url": "https://musahaydar.bandcamp.com/album/demo-2020",
+                "text": "[0] listen on bandcamp"
+            }
+        ]
+    },
+    {
+        "file": "ad_astra",
+        "name": "Ad Astra",
+        "body": "Ad Astra is an EP I made during a 48-hour WolverineSoft game jam, when I wanted to take a break from programming after a long class project. The jam's theme was \"Momentum.\" My goal was to capture the bitter-sweetness of departure and the grandiosity of flying through outer space.",
+        "links": [
+            {
+                "url": "https://musahaydar.bandcamp.com/album/ad-astra",
+                "text": "[0] listen on bandcamp"
+            }
+        ]
+    },
+    {
+        "file": "lunar_respite",
+        "name": "Lunar Respite",
+        "body": "Lunar Respite is moon survival game I created in a week for the WolverineSoft 2020 August Game Jam. The theme was \"One Controls Two\", which is where the idea of controlling two separated astronauts originated. Lunar Respite was awarded first place.</p><p>Lunar respite is one of my proudest game jam achievements. In addition to all the game's artwork, audio, and music, I managed to implement so many systems that week. This includes an inventory system, a system to persist items in the world and in storage inventories across Unity scenes, various interactive components, player status systems, and so on. I got way too little sleep that week, and it was totally worth it.",
+        "links": [
+            {
+                "url": "https://musahaydar.itch.io/lunar-respite",
+                "text": "[0] download the game on Itch.io"
+            }
+        ]
+    },
+    {
+        "file": "be_happy_pico_8",
+        "name": "Be Happy (Pico 8 ver.)",
+        "body": "I wanted to try developing for the PICO-8 fantasy console, so I spent a weekend recreating my game, Be Happy, in it.",
+        "links": [
+            {
+                "url": "https://musahaydar.itch.io/be-happy-pico-8",
+                "text":"[0] download the game on Itch.io"
+            }
+        ]
+    },
+    {
+        "file": "be_happy",
+        "name": "Be Happy",
+        "body": "Be Happy is a pair of arcade-style games created for the WolverineSoft 2020 June Game Jam. The theme was \"Zoom.\" I had an idea for the first game to fit the theme, but a tile-matching puzzle game was what I really wanted to make. Since I had a week for the jam, I ended up making both. I think the second game turned out to be a lot of fun! Be Happy was awarded first place.",
+        "links": [
+            {
+                "url": "https://musahaydar.itch.io/be-happy",
+                "text":"[0] download the game on Itch.io"
+            }
+        ]
+    },
+    {
+        "file": "awake_and_away",
+        "name": "Awake & Away",
+        "body": "Awake & Away is a very short role-playing game developed for the WolverineSoft 2020 Shammy Game Jam. It was developed in 48 hours and awarded third place.",
+        "links": [
+            {
+                "url": "https://musahaydar.itch.io/awake-and-away",
+                "text": "[0] download the game on Itch.io"
+            }
+        ]
+    },
+    {
+        "file": "the_broken_mansion",
+        "name": "The Broken Mansion",
+        "body": "The Broken Mansion is an exploration puzzle game created in 48 hours for the 2020 Global Game Jam. It's one of my favorite games I've made so far.</p><p>I had created the 3D style a short while before the global game jam, and decided I wanted to try making something with it. I spent the first day of the jam implementing the billboarding sprites and edge detection systems. I came up with the compass system later in the jam, while walking to the site early in the morning. The result was an atmospheric exploration game that I'm very proud of.",
+        "links": [
+            {
+                "url": "https://musahaydar.itch.io/broken-mansion",
+                "text": "[0] download the game on Itch.io"
+            }
+        ]
+    },
+    {
+        "file": "grief",
+        "name": "Grief",
+        "body": "Grief is bullet-hell shooter game created for the WolverineSoft 2020 Turkey Game Jam. It was awarded second place. The theme was \"Start Small.\" I collaborated with Ahmed Khan for this project, who helped me design and implement the complex bullet patterns.",
+        "links": [
+            {
+                "url": "https://musahaydar.itch.io/grief",
+                "text": "[0] download the game on Itch.io"
+            },
+            {
+                "url": "https://ahmedkkhan.github.io/",
+                "text": "[1] check out Ahmed Khan's work"
+            }
+        ]
+    },
+    {
+        "file": "the_other_side",
+        "name": "The Other Side",
+        "body": "The Other Side was created during my first game jam: the WolverineSoft 2020 Pumpkin Game Jam. I had experience programming role-playing game mechanics before this, and I wanted to see what I could make just 48 hours. The Other Side was awarded second place.",
+        "links": []
+    },
+    {
+        "file": "auto_scheduler",
+        "name": "Auto Scheduler",
+        "body": "Auto Scheduler is a web application created as our final project in EECS 493: User Interface Development. It was created using the React and Bootstrap. Our group consisted of three members.</p><p>Auto Scheduler allows a user to input a list of tasks they'd like to complete, and it automatically organizes and times them, inserting breaks and notifying the user when it's time to switch to the next task. Auto Scheduler also saves the user's state using their web browser's local storage.",
+        "links": [
+            {
+                "url": "auto_scheduler/index.html",
+                "text": "[0] try Auto Scheduler"
+            },
+            {
+                "url": "https://github.com/ahmedkkhan/auto-scheduler",
+                "text": "[1] view source code on GitHub"
+            }
+        ]
+    },
+    {
+        "file": "one_two_kung_fu",
+        "name": "One Two Kung Fu",
+        "body": "During my junior year of high school, I took Advanced Java Concepts at Washtenaw Community College. As the final class for that project, we had to create a networked game. My project was One Two Kung Fu, a two-player fighting game inspired by the classic game, Yie Ar Kung-Fu. The project involved socket programming as well as the model-view-controller design pattern for networked user interface systems.",
+        "links": []
+    },
+    {
+        "file": "meteor_matrix",
+        "name": "Meteor Matrix",
+        "body": "Meteor Matrix was my first game ever completed and published. It was a small mobile game created in Unity where the player could tap either side of their screen to move a spaceship and avoid asteroids.</p><p>Meteor Matrix was developed in a couple months, and was published on both the Google Play Store and the iOS App Store. I also implemented a global high score system that saved the best score achieved globally on a server. I released an update for the game in May, 2016.",
+        "links": []
+    },
+    {
+        "file": "magnetize",
+        "name": "Magnetize",
+        "body": "Magnetize was a follow up game to Meteor Matrix. It had similar controls, except now the player controls two magnets that attract or repel each other. Magnetize also featured a global high score system by connecting to a server, and was published on both the Google Play Store and the iOS App Store.",
+        "links": []
     }
 ]
