@@ -2,7 +2,7 @@
     {
         "file": "portfolio",
         "name": "Portfolio Website",
-        "body": "I finally updated my portfolio website with list of projects. Currently, it's a static website. The content for each project's page is stored in JSON, and the pages are generated using Python and Jinja.",
+        "body": "I finally updated my portfolio website with a list of projects. Currently, it's a static website. The content for each project's page is stored in JSON, and the pages are generated using Python and Jinja.",
         "links": [
             {
                 "url": "https://github.com/musahaydar/Portfolio",
@@ -203,5 +203,20 @@
         "name": "Magnetize",
         "body": "Magnetize was a follow up game to Meteor Matrix. It had similar controls, except now the player controls two magnets that attract or repel each other. Magnetize also featured a global high score system by connecting to a server, and was published on both the Google Play Store and the iOS App Store.",
         "links": []
+    },
+    {
+        "file": "rhythm_frontier",
+        "name": "Rhythm Frontier",
+        "body": "Rhythm Frontier is a game I created with Isaac Huffman for the WolverineSoft 2021 Pumpkin Game Jam. The theme was \"Deja Vu,\" so we created a rhythm game that incorporates pattern memorization. We won first place!</p><p>Rhythm Frontier was created in a custom game engine Isaac wrote using Java and LWJGL. My primary focus for this game was the artwork and music, but I also contributed to the code by adding graphics, levels, and sounds using Isaac's engine’s abstractions.",
+        "links": [
+            {
+                "url": "https://musahaydar.itch.io/rhythm-frontier",
+                "text": "[0] download the game on Itch.io"
+            },
+            {
+                "url": "https://github.com/isaacph/DejaVuRhythmGame",
+                "text": "[1] view source code on GitHub"
+            }
+        ]
     }
 ]
