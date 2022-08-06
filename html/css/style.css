@@ -5,22 +5,22 @@
 }
 
 .body_header {
-    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: 'Source Serif Pro', serif;
     text-align: center;
     line-height: 10px;
 }
 
 .links {
-    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: 'Source Serif Pro', serif;
     font-size: 125%;
     line-height: 10px;
-    font-weight: bold;
 }
 
 .links_small {
-    font-family: 'IBM Plex Mono', sans-serif;
-    font-size: 85%;
+    font-family: 'Source Serif Pro', serif;
+    font-size: 90%;
     line-height: 10px;
+    font-family:  'Ubuntu Mono', monospace;
 }
 
 .description {
@@ -92,7 +92,7 @@ h3 {
 }
 
 .about_body {
-    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: 'Source Serif Pro', serif;
     font-size: large;
     line-height: 26px;
 }
@@ -104,7 +104,7 @@ h3 {
 }
 
 .content_body {
-    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: 'Source Serif Pro', serif;
     font-size: large;
     line-height: 26px;
 }
@@ -127,8 +127,8 @@ h3 {
 .project_row {
     width: 100%;
     /* border: 1px solid #dddddd; */
-    font-family: 'IBM Plex Mono', monospace;
-    font-weight: bold;
+    font-family: 'Ubuntu Mono', monospace;
+    font-size: 100%;
     padding: 8px;
 }
 
