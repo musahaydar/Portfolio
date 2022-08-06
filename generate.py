@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 # Simple script to generate pages for projects
 from jinja2 import Template
 import json

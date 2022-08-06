@@ -6,7 +6,7 @@
         "links": [
             {
                 "url": "https://github.com/musahaydar/Portfolio",
-                "text": "[0] view source code on GitHub"
+                "text": "view source code on GitHub"
             }
         ]
     },
@@ -17,7 +17,7 @@
         "links": [
             {
                 "url": "https://musahaydar.bandcamp.com/album/ex-animo",
-                "text": "[0] listen on bandcamp"
+                "text": "listen on bandcamp"
             }
         ]
     },
@@ -28,11 +28,11 @@
         "links": [
             {
                 "url": "https://musahaydar.itch.io/crowds",
-                "text": "[0] download the game on Itch.io"
+                "text": "download the game on Itch.io"
             },
             {
                 "url": "https://logan-hughes.com/",
-                "text": "[1] check out Logan Hughes' work"
+                "text": "check out Logan Hughes' work"
             }
         ]
     },
@@ -43,11 +43,11 @@
         "links": [
             {
                 "url": "https://musahaydar.bandcamp.com/album/witchtale-soundtrack",
-                "text": "[0] listen on bandcamp"
+                "text": "listen on bandcamp"
             },
             {
                 "url": "https://pentaclestudio.itch.io/witchtale",
-                "text":"[1] download Witchtale on Itch.io"
+                "text":"download Witchtale on Itch.io"
             }
         ]
     },
@@ -58,7 +58,7 @@
         "links": [
             {
                 "url": "https://kapitha.itch.io/false-alarm",
-                "text":"[0] download the game on Itch.io"
+                "text":"download the game on Itch.io"
             }
         ]
     },
@@ -69,7 +69,7 @@
         "links": [
             {
                 "url": "https://musahaydar.itch.io/homelost",
-                "text": "[0] download the game on Itch.io"
+                "text": "download the game on Itch.io"
             }
         ]
     },
@@ -80,7 +80,7 @@
         "links": [
             {
                 "url": "https://musahaydar.bandcamp.com/album/demo-2020",
-                "text": "[0] listen on bandcamp"
+                "text": "listen on bandcamp"
             }
         ]
     },
@@ -91,7 +91,7 @@
         "links": [
             {
                 "url": "https://musahaydar.bandcamp.com/album/ad-astra",
-                "text": "[0] listen on bandcamp"
+                "text": "listen on bandcamp"
             }
         ]
     },
@@ -102,7 +102,7 @@
         "links": [
             {
                 "url": "https://musahaydar.itch.io/lunar-respite",
-                "text": "[0] download the game on Itch.io"
+                "text": "download the game on Itch.io"
             }
         ]
     },
@@ -113,7 +113,7 @@
         "links": [
             {
                 "url": "https://musahaydar.itch.io/be-happy-pico-8",
-                "text":"[0] download the game on Itch.io"
+                "text":"download the game on Itch.io"
             }
         ]
     },
@@ -124,7 +124,7 @@
         "links": [
             {
                 "url": "https://musahaydar.itch.io/be-happy",
-                "text":"[0] download the game on Itch.io"
+                "text":"download the game on Itch.io"
             }
         ]
     },
@@ -135,7 +135,7 @@
         "links": [
             {
                 "url": "https://musahaydar.itch.io/awake-and-away",
-                "text": "[0] download the game on Itch.io"
+                "text": "download the game on Itch.io"
             }
         ]
     },
@@ -146,7 +146,7 @@
         "links": [
             {
                 "url": "https://musahaydar.itch.io/broken-mansion",
-                "text": "[0] download the game on Itch.io"
+                "text": "download the game on Itch.io"
             }
         ]
     },
@@ -157,11 +157,11 @@
         "links": [
             {
                 "url": "https://musahaydar.itch.io/grief",
-                "text": "[0] download the game on Itch.io"
+                "text": "download the game on Itch.io"
             },
             {
                 "url": "https://ahmedkkhan.github.io/",
-                "text": "[1] check out Ahmed Khan's work"
+                "text": "check out Ahmed Khan's work"
             }
         ]
     },
@@ -178,7 +178,7 @@
         "links": [
             {
                 "url": "https://github.com/ahmedkkhan/auto-scheduler",
-                "text": "[0] view source code on GitHub"
+                "text": "view source code on GitHub"
             }
         ]
     },
@@ -207,11 +207,11 @@
         "links": [
             {
                 "url": "https://musahaydar.itch.io/rhythm-frontier",
-                "text": "[0] download the game on Itch.io"
+                "text": "download the game on Itch.io"
             },
             {
                 "url": "https://github.com/isaacph/DejaVuRhythmGame",
-                "text": "[1] view source code on GitHub"
+                "text": "view source code on GitHub"
             }
         ]
     }
