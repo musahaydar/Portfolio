@@ -1,0 +1,78 @@
+{
+    "game": {
+        "path": "icons/game.png",
+        "title": "Game"
+    },
+    "jam": {
+        "path": "icons/jam.png",
+        "title": "Made for a Game Jam"
+    },
+    "unity": {
+        "path": "icons/unity.png",
+        "title": "Unity"
+    },
+    "c-sharp": {
+        "path": "icons/c-sharp.png",
+        "title": "C#"
+    },
+    "networked": {
+        "path": "icons/networked.png",
+        "title": "Networked"
+    },
+    "java": {
+        "path": "icons/java.png",
+        "title": "Java"
+    },
+    "pico-8": {
+        "path": "icons/pico-8.png",
+        "title": "PICO-8"
+    },
+    "lua": {
+        "path": "icons/lua.png",
+        "title": "Lua"
+    },
+    "android": {
+        "path": "icons/android.png",
+        "title": "Android"
+    },
+    "ios": {
+        "path": "icons/ios.png",
+        "title": "iOS"
+    },
+    "music": {
+        "path": "icons/music.png",
+        "title": "Music"
+    },
+    "fl-studio": {
+        "path": "icons/fl-studio.png",
+        "title": "FL Studio"
+    },
+    "soundtrack": {
+        "path": "icons/soundtrack.png",
+        "title": "Soundtrack"
+    },
+    "lmms": {
+        "path": "icons/lmms.png",
+        "title": "LMMS"
+    },
+    "python": {
+        "path": "icons/python.png",
+        "title": "Python"
+    },
+    "website": {
+        "path": "icons/website.png",
+        "title": "Website"
+    },
+    "javascript": {
+        "path": "icons/javascript.png",
+        "title": "JavaScript"
+    },
+    "react": {
+        "path": "icons/react.png",
+        "title": "React"
+    },
+    "bootstrap": {
+        "path": "icons/bootstrap.png",
+        "title": "Bootstrap"
+    }
+}
