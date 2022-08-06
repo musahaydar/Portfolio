@@ -98,7 +98,7 @@ h3 {
 }
 
 .content {
-    width: 832px;
+    width: 512px;
     margin: auto;
     margin-top: 90px;
 }
@@ -129,7 +129,7 @@ h3 {
     /* border: 1px solid #dddddd; */
     font-family: 'Ubuntu Mono', monospace;
     font-size: 100%;
-    padding: 8px;
+    padding: 4px;
 }
 
 .project_name {
