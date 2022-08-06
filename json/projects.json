@@ -8,6 +8,10 @@
                 "url": "https://github.com/musahaydar/Portfolio",
                 "text": "view source code on GitHub"
             }
+        ],
+        "icon_names": [
+            "website",
+            "python"
         ]
     },
     {
@@ -19,6 +23,11 @@
                 "url": "https://musahaydar.bandcamp.com/album/ex-animo",
                 "text": "listen on bandcamp"
             }
+        ],
+        "icon_names": [
+            "music",
+            "fl-studio",
+            "lmms"
         ]
     },
     {
@@ -34,6 +43,12 @@
                 "url": "https://logan-hughes.com/",
                 "text": "check out Logan Hughes' work"
             }
+        ],
+        "icon_names": [
+            "game",
+            "jam",
+            "unity",
+            "c-sharp"
         ]
     },
     {
@@ -49,6 +64,11 @@
                 "url": "https://pentaclestudio.itch.io/witchtale",
                 "text":"download Witchtale on Itch.io"
             }
+        ],
+        "icon_names": [
+            "music",
+            "soundtrack",
+            "fl-studio"
         ]
     },
     {
@@ -60,6 +80,12 @@
                 "url": "https://kapitha.itch.io/false-alarm",
                 "text":"download the game on Itch.io"
             }
+        ],
+        "icon_names": [
+            "game",
+            "jam",
+            "unity",
+            "c-sharp"
         ]
     },
     {
@@ -71,6 +97,12 @@
                 "url": "https://musahaydar.itch.io/homelost",
                 "text": "download the game on Itch.io"
             }
+        ],
+        "icon_names": [
+            "game",
+            "jam",
+            "unity",
+            "c-sharp"
         ]
     },
     {
@@ -82,6 +114,10 @@
                 "url": "https://musahaydar.bandcamp.com/album/demo-2020",
                 "text": "listen on bandcamp"
             }
+        ],
+        "icon_names": [
+            "music",
+            "fl-studio"
         ]
     },
     {
@@ -93,6 +129,11 @@
                 "url": "https://musahaydar.bandcamp.com/album/ad-astra",
                 "text": "listen on bandcamp"
             }
+        ],
+        "icon_names": [
+            "music",
+            "jam",
+            "fl-studio"
         ]
     },
     {
@@ -104,6 +145,12 @@
                 "url": "https://musahaydar.itch.io/lunar-respite",
                 "text": "download the game on Itch.io"
             }
+        ],
+        "icon_names": [
+            "game",
+            "jam",
+            "unity",
+            "c-sharp"
         ]
     },
     {
@@ -115,6 +162,11 @@
                 "url": "https://musahaydar.itch.io/be-happy-pico-8",
                 "text":"download the game on Itch.io"
             }
+        ],
+        "icon_names": [
+            "game",
+            "pico-8",
+            "lua"
         ]
     },
     {
@@ -126,6 +178,12 @@
                 "url": "https://musahaydar.itch.io/be-happy",
                 "text":"download the game on Itch.io"
             }
+        ],
+        "icon_names": [
+            "game",
+            "jam",
+            "unity",
+            "c-sharp"
         ]
     },
     {
@@ -137,6 +195,12 @@
                 "url": "https://musahaydar.itch.io/awake-and-away",
                 "text": "download the game on Itch.io"
             }
+        ],
+        "icon_names": [
+            "game",
+            "jam",
+            "unity",
+            "c-sharp"
         ]
     },
     {
@@ -148,6 +212,12 @@
                 "url": "https://musahaydar.itch.io/broken-mansion",
                 "text": "download the game on Itch.io"
             }
+        ],
+        "icon_names": [
+            "game",
+            "jam",
+            "unity",
+            "c-sharp"
         ]
     },
     {
@@ -163,13 +233,25 @@
                 "url": "https://ahmedkkhan.github.io/",
                 "text": "check out Ahmed Khan's work"
             }
+        ],
+        "icon_names": [
+            "game",
+            "jam",
+            "unity",
+            "c-sharp"
         ]
     },
     {
         "file": "the_other_side",
         "name": "The Other Side",
         "body": "The Other Side was created during my first game jam: the WolverineSoft 2020 Pumpkin Game Jam. I had experience programming role-playing game mechanics before this, and I wanted to see what I could make just 48 hours. The Other Side was awarded second place.",
-        "links": []
+        "links": [],
+        "icon_names": [
+            "game",
+            "jam",
+            "unity",
+            "c-sharp"
+        ]
     },
     {
         "file": "auto_scheduler",
@@ -180,25 +262,50 @@
                 "url": "https://github.com/ahmedkkhan/auto-scheduler",
                 "text": "view source code on GitHub"
             }
+        ],
+        "icon_names": [
+            "website",
+            "javascript",
+            "react",
+            "bootstrap"
         ]
     },
     {
         "file": "one_two_kung_fu",
         "name": "One Two Kung Fu",
         "body": "During my junior year of high school, I took Advanced Java Concepts at Washtenaw Community College. As the final class for that project, we had to create a networked game. My project was One Two Kung Fu, a two-player fighting game inspired by the classic game, Yie Ar Kung-Fu. The project involved socket programming as well as the model-view-controller design pattern for networked user interface systems.",
-        "links": []
+        "links": [],
+        "icon_names": [
+            "game",
+            "java",
+            "networked"
+        ]
     },
     {
         "file": "meteor_matrix",
         "name": "Meteor Matrix",
         "body": "Meteor Matrix was my first game ever completed and published. It was a small mobile game created in Unity where the player could tap either side of their screen to move a spaceship and avoid asteroids.</p><p>Meteor Matrix was developed in a couple months, and was published on both the Google Play Store and the iOS App Store. I also implemented a global high score system that saved the best score achieved globally on a server. I released an update for the game in May, 2016.",
-        "links": []
+        "links": [],
+        "icon_names": [
+            "game",
+            "unity",
+            "c-sharp",
+            "android",
+            "ios"
+        ]
     },
     {
         "file": "magnetize",
         "name": "Magnetize",
         "body": "Magnetize was a follow up game to Meteor Matrix. It had similar controls, except now the player controls two magnets that attract or repel each other. Magnetize also featured a global high score system by connecting to a server, and was published on both the Google Play Store and the iOS App Store.",
-        "links": []
+        "links": [],
+        "icon_names": [
+            "game",
+            "unity",
+            "c-sharp",
+            "android",
+            "ios"
+        ]
     },
     {
         "file": "rhythm_frontier",
@@ -213,6 +320,11 @@
                 "url": "https://github.com/isaacph/DejaVuRhythmGame",
                 "text": "view source code on GitHub"
             }
+        ],
+        "icon_names": [
+            "game",
+            "jam",
+            "java"
         ]
     }
 ]

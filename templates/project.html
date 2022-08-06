@@ -16,6 +16,11 @@
                 <hr/>
             </div>
             <div class="about_body">
+                <div class="project_icons">
+                    {% for icon in icons %}
+                    <img src="{{ icon.path }}" title="{{ icon.title }}">
+                    {% endfor %}
+                </div>
                 <p>
                     {{ body }}
                 </p>
