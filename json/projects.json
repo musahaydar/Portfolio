@@ -326,5 +326,102 @@
             "jam",
             "java"
         ]
+    },
+    {
+        "file": "contactless",
+        "name": "Contactless",
+        "body": "Contactless is a mobile application developed by a team of three as our final project for EECS 441: Mobile App Development for Entrepreneurs. Contactless allows the user to enter their desired contact information and generate a QR code which is displayed on the landing page of the app. Then, when they'd like to share their contact information with another person, the other person can download their contact card by scanning that QR code with their phone. The focus of this course was more on the process of designing, iterating, and user testing than on actual app development. We created this app using React Native and published it onto the Google Play store.",
+        "links": [
+            {
+                "url": "https://play.google.com/store/apps/details?id=com.contactless441",
+                "text": "download it on the Google Play store"
+            },
+            {
+                "url": "https://github.com/asaadat99/contactless",
+                "text": "view source code on GitHub"
+            }
+        ],
+        "icon_names": [
+            "android",
+            "javascript",
+            "react-native"
+        ]
+    },
+    {
+        "file": "othersider",
+        "name": "Othersider",
+        "body": "A game created by Nicholas Way and I in 48 hours for the 2022 Global Game Jam, inspired by the theme \"Duality.\" Control one character across multiple levels simultaneously, carrying your momentum between worlds.",
+        "links": [
+            {
+                "url": "https://eggshelld.itch.io/othersider",
+                "text": "play or download the game on itch.io"
+            }
+        ],
+        "icon_names": [
+            "game",
+            "jam",
+            "unity",
+            "c-sharp"
+        ]
+    },
+    {
+        "file": "how_to_say_goodbye",
+        "name": "How To Say Goodbye",
+        "body": "Nostalgic college town vibes.",
+        "links": [
+            {
+                "url": "https://musahaydar.bandcamp.com/album/how-to-say-goodbye",
+                "text": "listen on bandcamp"
+            }
+        ],
+        "icon_names": [
+            "music",
+            "fl-studio"
+        ]
+    },
+    {
+        "file": "undergrad_anthology",
+        "name": "Undergrad Anthology",
+        "body": "Undergrad Anthology is a collection of the music I composed during my three years as an undergraduate at the University of Michigan. Most of the tracks either come from game jams or from image-prompt composition challenges which I participated in through the university's Video Game Music Club. There’s also some tracks from various projects which I don’t intent to finish.",
+        "links": [
+            {
+                "url": "https://musahaydar.bandcamp.com/album/undergrad-anthology",
+                "text": "listen on bandcamp"
+            }
+        ],
+        "icon_names": [
+            "music",
+            "fl-studio"
+        ]
+    },
+    {
+        "file": "short_songs",
+        "name": "Short Songs",
+        "body": "I created a lot of LMMS projects when I was learning to use it a few years ago, as one does. I happened upon them recently, and among them were some audio files that were only a few seconds long, with some small idea I did not elaborate on at the time. This EP is a compilation of some of them, totaling exactly a minute of sound.",
+        "links": [
+            {
+                "url": "https://musahaydar.bandcamp.com/album/short-songs",
+                "text": "listen on bandcamp"
+            }
+        ],
+        "icon_names": [
+            "music",
+            "lmms"
+        ]
+    },
+    {
+        "file": "spotify-playlist-to-csv",
+        "name": "Short Songs",
+        "body": "Spotify Playlist to CSV is a small script I wrote to generate a CSV from a Spotify playlist via a list of URLs. It's written in JavaScript to take advantage of the Spotify-URL-Info NPM package.",
+        "links": [
+            {
+                "url": "https://github.com/musahaydar/spotify-playlist-to-csv",
+                "text": "view source code or download on GitHub"
+            }
+        ],
+        "icon_names": [
+            "command-line",
+            "javascript"
+        ]
     }
 ]

@@ -71,8 +71,16 @@
         "path": "icons/react.png",
         "title": "React"
     },
+    "react-native": {
+        "path": "icons/react.png",
+        "title": "React Native"
+    },
     "bootstrap": {
         "path": "icons/bootstrap.png",
         "title": "Bootstrap"
+    },
+    "command-line": {
+        "path": "icons/command-line.png",
+        "title": "Command Line Application"
     }
 }
