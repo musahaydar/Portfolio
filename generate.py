@@ -12,8 +12,7 @@ def generateProjectPages():
     output_path = 'html/projects/'
 
     # create the output path if it doesn't exist
-    path_exists = os.path.exists(output_path)
-    if not path_exists:
+    if not os.path.exists(output_path):
         os.makedirs(output_path)
 
     # load contexts
