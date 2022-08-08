@@ -382,7 +382,7 @@
     {
         "file": "undergrad_anthology",
         "name": "Undergrad Anthology",
-        "body": "Undergrad Anthology is a collection of the music I composed during my three years as an undergraduate at the University of Michigan. Most of the tracks either come from game jams or from image-prompt composition challenges which I participated in through the university's Video Game Music Club. There’s also some tracks from various projects which I don’t intent to finish.",
+        "body": "Undergrad Anthology is a collection of the music I composed during my three years as an undergraduate at the University of Michigan. Most of the tracks either come from game jams or from image-prompt composition challenges which I participated in through the university's Video Game Music Club. There are also some tracks from various projects which I don't intent to finish.",
         "links": [
             {
                 "url": "https://musahaydar.bandcamp.com/album/undergrad-anthology",
@@ -397,7 +397,7 @@
     {
         "file": "short_songs",
         "name": "Short Songs",
-        "body": "I created a lot of LMMS projects when I was learning to use it a few years ago, as one does. I happened upon them recently, and among them were some audio files that were only a few seconds long, with some small idea I did not elaborate on at the time. This EP is a compilation of some of them, totaling exactly a minute of sound.",
+        "body": "I created a lot of LMMS projects when I was learning to use it a few years ago, as one does. I happened upon them recently, and among them were some audio files that were only a few seconds long, with some small idea I did not elaborate on at the time. This \"EP\" is a compilation of some of them, totaling exactly a minute of sound.",
         "links": [
             {
                 "url": "https://musahaydar.bandcamp.com/album/short-songs",
@@ -411,7 +411,7 @@
     },
     {
         "file": "spotify-playlist-to-csv",
-        "name": "Short Songs",
+        "name": "Spotify Playlist to CSV",
         "body": "Spotify Playlist to CSV is a small script I wrote to generate a CSV from a Spotify playlist via a list of URLs. It's written in JavaScript to take advantage of the Spotify-URL-Info NPM package.",
         "links": [
             {
