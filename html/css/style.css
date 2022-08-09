@@ -16,10 +16,9 @@
 }
 
 .links_small {
-    font-family: 'Source Serif Pro', serif;
+    font-family:  'Ubuntu Mono', monospace;
     font-size: 90%;
     line-height: 10px;
-    font-family:  'Ubuntu Mono', monospace;
 }
 
 .description {
@@ -106,6 +105,12 @@ h1 {
     margin-top: 90px;
 }
 
+.notebook {
+    width: 640px;
+    margin: auto;
+    margin-top: 90px;
+}
+
 .content_body {
     font-family: 'Source Serif Pro', serif;
     font-size: large;
@@ -150,4 +155,26 @@ h1 {
 .project_icons img {
     width: 28px;
     height: 28px;
+}
+
+.code_block {
+    font-size: 80%;
+    line-height: 16px;
+    background-color: rgb(240, 240, 240);
+    padding: 5px;
+    width: 100%;
+    overflow-x: scroll;
+}
+
+pre {
+    font-family:  'Ubuntu Mono', monospace;
+}
+
+.code_inline {
+    font-family:  'Ubuntu Mono', monospace;
+    background-color: rgb(240, 240, 240);
+}
+
+.body_text a {
+    text-decoration: underline;
 }
