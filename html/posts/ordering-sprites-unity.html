@@ -35,7 +35,7 @@
                     </p>
                     <h3>Absolute Sorting Order</h3>
                     <p>
-                      The first method, and my preferred method, is what I call "Absolute Sorting Order." This method sets the <span class="code_inline">sortingOrder</span>
+                      My preferred method is what I call "Absolute Sorting Order." This method sets the <span class="code_inline">sortingOrder</span>
                       based on the y position of the GameObject. Following is the complete <span class="code_inline">AbsoluteSortingOrder.cs</span> script. This script should be
                       attached to every object on the same sorting layer as the player, including the player.
                     </p>
@@ -59,7 +59,7 @@ public class AbsoluteSortingOrder : MonoBehaviour {
     }
 }</pre></div>
                     <p>
-                      This method provides the following advantages: firstly, it sorts all objects based on their position, so any object can be moved during runtime, and it will automatically
+                      This method sorts all objects based on their position, so any object can be moved during runtime, and it will automatically
                       appear in front of or behind any other objects which it is in front of or behind, respectively, as long as they also have this script attached. It may be possible to overflow the
                       <span class="code_inline">sortingOrder</span> using this script, since it does not constrain the <span class="code_inline">sortingOrder</span> to any maximum value. So far, I have
                       not made a scene large enough for this to be a problem, but it's something to keep in mind.
@@ -70,7 +70,7 @@ public class AbsoluteSortingOrder : MonoBehaviour {
                       tree's sprite. In order to achieve this behavior, we can add an <span class="code_inline">offset</span> value. The <span class="code_inline">offset</span> for a particular
                       object can be set in the Unity editor, ideally on the prefab of the object. Setting it to a negative value decreases the value of the <span class="code_inline">sortingOrder</span>
                       and the opposite. Thus, if we want to make the tree sprite sort based on the bottom of the sprite instead of the center (or whichever point <span class="code_inline">transform.position.y</span>
-                      is derived), we can set the <span class="code_inline">offset = -0.2</span>.
+                      is derived), we can set <span class="code_inline">offset = -0.2</span>.
                     </p>
                     <h3>Relative Sorting Order</h3>
                     <p>
@@ -82,7 +82,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RelativeLayer : MonoBehaviour {
+public class RelativeSortingOrder : MonoBehaviour {
     public float offset;
     public int layerAdjHi = 0, layerAdjLo = 0;
     public string targetTag = "Player";
