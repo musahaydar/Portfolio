@@ -36,7 +36,7 @@
                     <h3>Absolute Sorting Order</h3>
                     <p>
                       My preferred method is what I call "Absolute Sorting Order." This method sets the <span class="code_inline">sortingOrder</span>
-                      based on the y position of the GameObject. Following is the complete <span class="code_inline">AbsoluteSortingOrder.cs</span> script. This script should be
+                      based on the y position of the GameObject. Below is the complete <span class="code_inline">AbsoluteSortingOrder.cs</span> script. This script should be
                       attached to every object on the same sorting layer as the player, including the player.
                     </p>
                     <div class="code_block"><pre>
@@ -119,8 +119,8 @@ public class RelativeSortingOrder : MonoBehaviour {
                     <p>
                       Besides the fact that this script avoids the potential overflow problem in the Absolute Sorting Order (again, I've not had this issue and it's likely an easy fix), it's clearly
                       the worse choice. For example, if your game should have an NPC, or any other GameObject which moves around the level, the script will not sort the objects relative to them, only the
-                      player. It also has the advantage of allowing hardcoded <span class="code_inline">sortingOrder</span> values, which means that objects which do not conform to this sprite
-                      sorting scheme can be sorting accordingly to those values. However, these same behaviors can be achieved with the Absolute Sorting Order method as well, perhaps using different
+                      player. This script does have the advantage of using hardcoded <span class="code_inline">sortingOrder</span> values, which means that objects which do not conform to this sprite
+                      sorting scheme can be sorting according to those values. However, these same behaviors can be achieved with the Absolute Sorting Order method as well, perhaps using different
                       sorting layers or sprite masks.
                     </p>
                     <p>
