@@ -159,6 +159,12 @@ h1 {
     color: #8f8f8f;
 }
 
+.subtitle {
+    font-size: 14pt;
+    color: #8f8f8f;
+}
+
+
 .project_date {
     float: right;
     padding-right: 2%;
