@@ -184,9 +184,10 @@ h1 {
     font-size: 80%;
     line-height: 16px;
     background-color: rgb(240, 240, 240);
-    padding: 5px;
+    padding-left: 15px;
     width: 100%;
     overflow-x: scroll;
+    border-radius: 8px;
 }
 
 pre {
