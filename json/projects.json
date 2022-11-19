@@ -423,5 +423,24 @@
             "command-line",
             "javascript"
         ]
+    },
+    {
+        "file": "whatsapp-stats-parser",
+        "name": "WhatsApp Stats Parser",
+        "body": "While talking with a friend, a question arose of just how active a particular student organization group chat is in terms of unique active participants and number of messages, so I wrote a script to parse a WhatsApp chat export text file (using regular expressions) to determine the chat's activity within a week. It was further suggested to me to count messages per sender so we could rank participant activity in the chat. An additional feature to create a bar graph of the results was contributed to the project by another friend, GitHub user <span class=\"code_inline\">cmdshftateya</span>. This little project turned out to be a lot of fun!",
+        "links": [
+            {
+                "url": "https://github.com/musahaydar/whatsapp-stats-parser",
+                "text": "view source code or download on GitHub"
+            },
+            {
+                "url": "https://github.com/cmdshftateya",
+                "text": "check out <span class=\"code_inline\">cmdshftateya</span>'s work on GitHub"
+            }
+        ],
+        "icon_names": [
+            "command-line",
+            "python"
+        ]
     }
 ]
