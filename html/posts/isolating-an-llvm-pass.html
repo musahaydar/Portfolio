@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=0.6">
+        <title>Isolating an LLVM Pass | Notebook | Musa Haydar </title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="icon" href="../images/Moon_Sprite_Big.png">
+    </head>
+    <body>
+        <div class="notebook">
+            <div class="body_header">
+                <h1>Isolating an LLVM Pass</h1>
+                <div class="subtitle">Musa Haydar | Nov 28, 2022</div>
+                <hr/>
+            </div>
+            <div class="about_body">
+                <div class="body_text">
+                    <p>This is noteworthy because it took me far too long to figure out. If you want to isolate an LLVM optimization pass (i.e. run it on otherwise unoptimized LLVM bitcode), it might not be sufficient to simply compile the program with <span class="code_inline">clang</span>. In particular, compiling with the <span class="code_inline">clang</span> <span class="code_inline">-O0</span> flag (which is the default if no optimization level is specified) explicitly adds the <span class="code_inline">optnone</span> property to every function in the LLVM bitcode. Then, running an optimization pass with the <span class="code_inline">opt</span> command will result in the pass being skipped on those functions.</p>
+                    <p>To avoid this, the program should be compiled with the following <span class="code_inline">clang</span> flags:</p>
+                    <div class="code_block"><pre>clang -O -Xclang -disable-llvm-passes -emit-llvm</pre></div>
+                    <p>Note the inclusion of the <span class="code_inline">-O</span> flag with no optimization level specified. Now, you should be able to run an optimization pass with <span class="code_inline">opt</span> without the pass being skipped by the pass manager.</p>
+                </div>              
+                <br/>
+                <div class="links">
+                    <p><a href="../notebook.html">Return</a></p>
+                </div>
+                <br/>       
+            </div>
+            <br/>
+			<br/>
+            <br/>
+        </div>
+    </body>
+</html>
