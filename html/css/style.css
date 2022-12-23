@@ -85,6 +85,10 @@ a {
     color: black;
 }
 
+.about_body a {
+    text-decoration: underline;
+}
+
 h3 {
     text-align: center;
 }
