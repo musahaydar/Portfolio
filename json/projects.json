@@ -442,5 +442,24 @@
             "command-line",
             "python"
         ]
+    },
+    {
+        "file": "loop-fusion-mic",
+        "name": "Enabling Loop Fusion in LLVM by Moving Intervening Code",
+        "body": "My EECS 583 team's final project was an implementation of an algorithm to move intervening code between two loops so that the loops can be fused using the existing loop fusion pass in LLVM. Details of the problem and our solution can be found in our team's report.",
+        "links": [
+            {
+                "url": "https://github.com/musahaydar/eecs583-loop-fusion",
+                "text": "view source code or download on GitHub"
+            },
+            {
+                "url": "https://musah.net/pdf/583_report.pdf",
+                "text": "read our team's report"
+            }
+        ],
+        "icon_names": [
+            "command-line",
+            "python"
+        ]
     }
 ]
