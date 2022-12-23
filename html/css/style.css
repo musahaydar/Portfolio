@@ -193,11 +193,35 @@ pre {
     background-color: rgb(240, 240, 240);
 }
 
+.log_title {
+    padding-top: 2%;
+    padding-left: 2%;
+    text-align: center;
+}
+
+.log_body {
+    font-family: 'Source Serif Pro', serif;
+    padding: 2%;
+    font-size: 11pt;
+    line-height: 20px;
+}
+
+.log_body p {
+    margin-top: 6pt;
+    margin-bottom: 6pt;
+}
+
 /* LINKS STYLE */
 
 a {
     text-decoration: none;
     color: black;
+}
+
+.log_body a {
+    color: black;
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
 }
 
 .body_text a {
