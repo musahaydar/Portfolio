@@ -51,7 +51,6 @@
     height: 28px;
 }
 
-
 .right {
     float: right;
 }
@@ -78,15 +77,6 @@ hr {
     height: 0.25px; 
     background: black;
     width: 80%;
-}
-
-a {
-    text-decoration: none;
-    color: black;
-}
-
-.about_body a {
-    text-decoration: underline;
 }
 
 h3 {
@@ -203,6 +193,28 @@ pre {
     background-color: rgb(240, 240, 240);
 }
 
+/* LINKS STYLE */
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
 .body_text a {
     text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+}
+
+.about_body a {
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+}
+
+/* order here matters, this should be below the about_body a style */
+.links a {
+    text-decoration: none;
+}
+
+.links_small a {
+    text-decoration: none;
 }
