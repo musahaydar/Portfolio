@@ -211,6 +211,14 @@ pre {
     margin-bottom: 6pt;
 }
 
+.log_body ul {
+    padding-left: 6%;
+}
+
+.log_body li {
+    padding-top: 4px;
+}
+
 /* LINKS STYLE */
 
 a {
