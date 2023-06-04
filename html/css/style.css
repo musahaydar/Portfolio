@@ -244,9 +244,28 @@ a {
 
 /* order here matters, this should be below the about_body a style */
 .links a {
-    text-decoration: none;
+    text-decoration: underline;
+    font-size: 13pt;
 }
 
 .links_small a {
     text-decoration: none;
+}
+
+/* for index page links only */
+.index_links {
+    font-family: 'Source Serif Pro', serif;
+    font-size: 125%;
+    line-height: 10px;
+    text-align: center;
+}
+
+.index_links a {
+    text-decoration: none;
+    /* font-size: 90%; */
+}
+
+.index_links br {
+    display: block;
+    margin: 10px 0;
 }
