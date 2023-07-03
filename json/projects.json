@@ -275,17 +275,6 @@
         ]
     },
     {
-        "file": "one_two_kung_fu",
-        "name": "One Two Kung Fu",
-        "body": "During my junior year of high school, I took Advanced Java Concepts at Washtenaw Community College. As the final class for that project, we had to create a networked game. My project was One Two Kung Fu, a two-player fighting game inspired by the classic game, Yie Ar Kung-Fu. The project involved socket programming as well as the model-view-controller design pattern for networked user interface systems.",
-        "links": [],
-        "icon_names": [
-            "game",
-            "java",
-            "networked"
-        ]
-    },
-    {
         "file": "meteor_matrix",
         "name": "Meteor Matrix",
         "body": "Meteor Matrix was my first game ever completed and published. It was a small mobile game created in Unity where the player could tap either side of their screen to move a spaceship and avoid asteroids.</p><p>Meteor Matrix was developed in a couple months, and was published on both the Google Play Store and the iOS App Store. I also implemented a global high score system that saved the best score achieved globally on a server. I released an update for the game in May, 2016.",
