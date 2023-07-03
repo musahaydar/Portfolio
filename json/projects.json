@@ -449,7 +449,7 @@
     },
     {
         "file": "loop-fusion-mic",
-        "name": "Enabling Loop Fusion in LLVM by Moving Intervening Code",
+        "name": "MIC for Loop Fusion in LLVM",
         "body": "My EECS 583 team's final project was an implementation of an algorithm to move intervening code between two loops so that the loops can be fused using the existing loop fusion pass in LLVM. Details of the problem and our solution can be found in our team's report.",
         "links": [
             {
