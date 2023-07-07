@@ -33,7 +33,7 @@
     {
         "file": "crowds",
         "name": "Crowds!",
-        "body": "Crowds! is a puzzle game about getting people indoors. It was made for the 2021 WolverineSoft Summer Game Jam, where the theme was \"You don't have to go home, but you can't stay here.\" I created the music, artwork, and programmed the game, and Logan Hughes created all of the game's sound effects. Crowds! won first place.</p><p>Crowds! is played by placing \"impostors\" on the board, which affect the people around them. The goal is to get all the people off the board in as few turns and using as few impostors as possible.</p><p>The game is more of a proof of concept, since I didn’t implement a way to share a puzzle so that more than one person can try to optimize a solution. The rules are also rather complicated, and a proper tutorial would help.",
+        "body": "Crowds! is a puzzle game about getting people indoors. It was made for the 2021 WolverineSoft Summer Game Jam, where the theme was \"You don't have to go home, but you can't stay here.\" I created the music, artwork, and programmed the game, and Logan Hughes created all of the game's sound effects. Crowds! won first place.</p><p>Crowds! is played by placing \"impostors\" on the board, which affect the people around them. The goal is to get all the people off the board in as few turns and using as few impostors as possible.</p><p>The game is more of a proof of concept, since I didn't implement a way to share a puzzle so that more than one person can try to optimize a solution. The rules are also rather complicated, and a proper tutorial would help.",
         "links": [
             {
                 "url": "https://musahaydar.itch.io/crowds",
@@ -453,6 +453,24 @@
         "icon_names": [
             "command-line",
             "python"
+        ]
+    },
+    {
+        "file": "kompare",
+        "name": "KOMPARE",
+        "body": "As part of my master's degree in computer science, I wrote a master's thesis on KOMPARE, my work to extend the KLEE symbolic execution engine for patch verification. KOMPARE's analysis demonstrates that a patch to a program does not introduce any new bugs nor affect the program's behavior in any unintended ways. <p>KOMPARE symbolically executes a patched program to generate program inputs. Then, concrete executions are performed using the generated inputs on both the patched and original versions of the program. During these concrete executions, KOMPARE records and compares the externally visible outputs of the program to determine if the behaviors of the two versions match. KOMPARE additionally performs an analysis of differences between the two programs (as represented in LLVM bitcode), which is then used to direct symbolic execution towards the differences in the programs, increasing the efficiency of KOMPARE's analysis.</p>",
+        "links": [
+            {
+                "url": "https://musah.net/pdf/thesis.pdf",
+                "text": "read my master's thesis"
+            },
+            {
+                "url": "https://github.com/musahaydar/klee-compare",
+                "text": "view source code or download on GitHub"
+            }
+        ],
+        "icon_names": [
+            "c-plus-plus"
         ]
     }
 ]

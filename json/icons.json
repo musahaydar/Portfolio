@@ -82,5 +82,9 @@
     "command-line": {
         "path": "icons/command-line.png",
         "title": "Command Line Application"
+    },
+    "c-plus-plus": {
+        "path": "icons/c-plus-plus.png",
+        "title": "C++"
     }
 }
