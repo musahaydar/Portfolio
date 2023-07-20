@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=0.6">
+        <title>Screen-shake in Godot 4 | Notebook | Musa Haydar </title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="icon" href="../images/Moon_Sprite_Big.png">
+    </head>
+    <body>
+        <div class="notebook">
+            <div class="body_header">
+                <h1>Screen-shake in Godot 4</h1>
+                <div class="subtitle">Musa Haydar | Jul 19, 2023</div>
+                <hr/>
+            </div>
+            <div class="about_body">
+                <div class="body_text">
+                    <p>Following is an implementation of a screen-shake effect based on <a href="https://www.youtube.com/watch?v=RVtcnkuNUIk">this video</a> by The Shaggy Dev (their code is available on <a href="https://github.com/theshaggydev/the-shaggy-dev-projects/tree/main/projects/godot-3/screen-shake">this GitHub repo</a>). I've implemented it in Godot 4, which replaces the <span class="code_inline">OpenSimplexNoise</span> generator with <spam class="code_inline">FastNoiseLite</spam>. This script is meant to be applied to a <span class="code_inline">Camera2D</span> node, and the screen can be shaken by invoking the <span class="code_inline">shake_screen()</span> function elsewhere in the game, with an optional shake strength parameter.</p>
+                    <p>Both noise-based and random screen shake are implemented here. In my use case, where the camera node follows the player, I find the random screen shake to be more effective and convincing. The type of screen shake applied can be changed by setting the value of the <spam class="code_inline">shake_type</spam> variable.</p>
+                    <div class="code_block"><pre>
+class_name CameraController extends Camera2D
+
+enum ShakeType {RANDOM, NOISE}
+var shake_type = ShakeType.RANDOM
+
+@onready var noise = FastNoiseLite.new()
+@onready var rand = RandomNumberGenerator.new()
+var noise_i : float = 0.0
+var strength_i : float = 0.0s
+
+# defaults
+var shake_strength : float = 20.0
+var shake_decay : float =  10.0
+var shake_speed : float = 10.0
+
+func _ready():
+    rand.randomize()
+    noise.seed = rand.randi()
+    
+func _process(delta):
+    # fade out shake intensity over time
+    strength_i = lerp(strength_i, 0.0, shake_decay * delta)
+    
+    # apply screen shake
+    var shake_offset : Vector2
+    match shake_type:
+        ShakeType.NOISE: 
+            shake_offset = get_noise_offset(delta, shake_speed, strength_i)
+        ShakeType.RANDOM:
+            shake_offset = get_random_offset(strength_i)
+    
+    offset = shake_offset
+
+func get_noise_offset(delta : float, speed : float, strength : float):
+    noise_i += delta * speed
+    return Vector2(
+        noise.get_noise_2d(1, noise_i) * strength, 
+        noise.get_noise_2d(100, noise_i) * strength
+    )
+
+func get_random_offset(strength : float):
+    return Vector2(
+        rand.randf_range(-strength, strength),
+        rand.randf_range(-strength, strength)
+    )
+
+# called by external source to start screen shake
+func shake_screen(strength : float = shake_strength):
+    strength_i = strength
+</pre></div>
+                </div>
+                <br/>
+                <div class="links">
+                    <p><a href="../notebook.html">Return</a></p>
+                </div>
+                <br/>       
+            </div>
+            <br/>
+			<br/>
+            <br/>
+        </div>
+    </body>
+</html>
