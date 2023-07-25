@@ -21,7 +21,7 @@
         "links": [
             {
                 "url": "https://musahaydar.bandcamp.com/album/ex-animo",
-                "text": "listen on bandcamp"
+                "text": "listen on Bandcamp"
             }
         ],
         "icon_names": [
@@ -62,7 +62,7 @@
         "links": [
             {
                 "url": "https://musahaydar.bandcamp.com/album/witchtale-soundtrack",
-                "text": "listen on bandcamp"
+                "text": "listen on Bandcamp"
             },
             {
                 "url": "https://pentaclestudio.itch.io/witchtale",
@@ -116,7 +116,7 @@
         "links": [
             {
                 "url": "https://musahaydar.bandcamp.com/album/demo-2020",
-                "text": "listen on bandcamp"
+                "text": "listen on Bandcamp"
             }
         ],
         "icon_names": [
@@ -131,7 +131,7 @@
         "links": [
             {
                 "url": "https://musahaydar.bandcamp.com/album/ad-astra",
-                "text": "listen on bandcamp"
+                "text": "listen on Bandcamp"
             }
         ],
         "icon_names": [
@@ -364,7 +364,11 @@
         "links": [
             {
                 "url": "https://musahaydar.bandcamp.com/album/how-to-say-goodbye",
-                "text": "listen on bandcamp"
+                "text": "listen on Bandcamp"
+            },
+            {
+                "url": "https://musahaydar.bandcamp.com/album/ill-miss-you-snowy-duet-version",
+                "text": "listen to the track I'll Miss You (Snowy Duet Version) on Bandcamp"
             }
         ],
         "icon_names": [
@@ -379,7 +383,7 @@
         "links": [
             {
                 "url": "https://musahaydar.bandcamp.com/album/undergrad-anthology",
-                "text": "listen on bandcamp"
+                "text": "listen on Bandcamp"
             }
         ],
         "icon_names": [
@@ -394,7 +398,7 @@
         "links": [
             {
                 "url": "https://musahaydar.bandcamp.com/album/short-songs",
-                "text": "listen on bandcamp"
+                "text": "listen on Bandcamp"
             }
         ],
         "icon_names": [
@@ -480,11 +484,11 @@
         "links": [
             {
                 "url": "https://kapitha.itch.io/star-crossed-rover",
-                "text": "play or download the game on itch.io"
+                "text": "play or download the game on Itch.io"
             },
             {
                 "url": "https://musahaydar.bandcamp.com/album/star-crossed-rover-soundtrack",
-                "text": "listen to the soundtrack on bandcamp"
+                "text": "listen to the soundtrack on Bandcamp"
             },
             {
                 "url": "https://musah.net/posts/godot-has-arrived.html",
@@ -496,6 +500,22 @@
             "jam",
             "godot",
             "gdscript"
+        ]
+    },
+    {
+        "file": "music-from-the-bella-prototype",
+        "name": "Music From The Bella Prototype (2019)",
+        "body": "Here is a collection of atmospheric songs from a prototype of a game I made back in 2019.",
+        "links": [
+            {
+                "url": "https://musahaydar.bandcamp.com/album/music-from-the-bella-prototype-2019",
+                "text": "listen on Bandcamp"
+            }
+        ],
+        "icon_names": [
+            "music",
+            "fl-studio",
+            "lmms"
         ]
     }
 ]
