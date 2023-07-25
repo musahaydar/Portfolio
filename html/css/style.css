@@ -18,7 +18,7 @@
 
 .links_small {
     font-family:  'Ubuntu Mono', monospace;
-    font-size: 90%;
+    font-size: 11pt;
     line-height: 10px;
 }
 
@@ -101,7 +101,7 @@ h1 {
 
 .about_body {
     font-family: 'Source Serif Pro', serif;
-    font-size: 13pt;
+    font-size: 12pt;
     line-height: 26px;
 }
 
@@ -157,22 +157,25 @@ h1 {
 
 .project_row {
     margin: 2px;
+    line-height: 26px;
 }
 
 .project_name {
     text-decoration: underline;
     text-decoration-thickness: 1.5px;
     padding-left: 2%;
+    font-size: 13pt;
 }
 
 .project_subtitle {
     padding-left: 4%;
-    font-size: 12pt;
+    font-size: 11pt;
+    line-height: 22px;
     color: #8f8f8f;
 }
 
 .subtitle {
-    font-size: 14pt;
+    font-size: 12pt;
     color: #8f8f8f;
 }
 
@@ -191,8 +194,8 @@ h1 {
 }
 
 .project_icons img {
-    width: 28px;
-    height: 28px;
+    width: 25px;
+    height: 25px;
 }
 
 .code_block {

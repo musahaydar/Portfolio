@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=0.6">
+        <title>Wait No Longer: Godot Has Arrived! | Notebook | Musa Haydar </title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="icon" href="../images/Moon_Sprite_Big.png">
+    </head>
+    <body>
+        <div class="notebook">
+            <div class="body_header">
+                <h1>Wait No Longer: Godot Has Arrived! </h1>
+                <div class="subtitle">Musa Haydar | Jul 25, 2023</div>
+                <hr/>
+            </div>
+            <div class="about_body">
+                <div class="body_text">
+                    <p>This past week, for the game jam at which Kaavya and I built a pretty neat puzzle game called <a href="https://kapitha.itch.io/star-crossed-rover">Star-Crossed Rover</a>, I finally took the plunge and switched from Unity to the Godot game engine. And thus I am happy to announce: Godot has arrived.
+
+                    <p>Immediate literary references aside, I've been meaning to try out Godot for some time now, especially following Unity's merger with IronSource, Godot 4's release, and the fact that Godot is a promising open-source alternative to Unity. Unfortunately, a sunk-cost fallacy kept me committed solely to Unity for far longer than I ought to have been: I've been using Unity since I was in middle school. And (keeping in mind I primarily develop 2D games with pixel art so this may not apply to everyone) I found Godot to be an absolutely pleasure to use, and I would highly recommend trying it out!</p>
+                    
+                    <p>Of the most significant differences to Unity is the "Nodes" system. Whereas in Unity there is a distinction between "Scenes" and "GameObjects" etc., in Godot there are only nodes. This design may be unfamiliar but within a day or two I found it to be remarkably intuitive to use, and, by now, I can say I prefer it to Unity altogether. Familiarity with prefabs in Unity makes a good analog: for instance, I found the "editable children" option on my own and it worked exactly as I expected it to. Furthermore, a nifty "extend script" button on a node's context menu brings object inheritance at the forefront of your mind. Want to add new features to a node while retaining the properties of it's super class? Just click "extend script." Want to access the parents interface in the child? Doing so is as simple as invoking <span class="code_inline">super()</span>. Using GDScript will be quite comfortable for Python programmers indeed, though Godot 4 additionally supports C# and C++.</p>
+                    
+                    <p>Godot's 2D features work especially well, notable in it's friendliness to pixel art and built-in screen-scaling preserving your game's aspect ratio, if desired. These are constant annoyances when I work with Unity, which seem to be a consequence of the 2D engine being built secondarily to the 3D engine. Godot is also much lighter-weight than Unity, taking less time to load and build and whatnot. Perhaps Godot will gain some weight as Unity has over the years as its development continues, but as it stands, this made using Godot a breath of fresh air.</p>
+                    
+                    <p>I had only a few annoyances with Godot during this week. In particular, there's currently no way to arbitrarily pick sprites out of a sprite sheet, which is a pain when the sprite-sheet you're working with does not divide evenly. Unity's Sprite Editor makes this easy by allowing you to divide the sprite-sheet into individual, arbitrarily-sized sprites before use in the game. Furthermore, working with a deeply-nested node tree occasionally caused me confusion with regards to the local and global transform properties of a node. Finally, the UI panelling system was rather unintuitive, but it's not necessary to use in your game (so be weary of tutorials which introduce it without mentioning alternatives) and may be worth learning for your project because it's quite a powerful system (allegedly, the Godot editor's GUI is built using it, though I don't know to what extant this is true).</p>
+                    
+                    <p>Of course, in its current state Godot lacks many of the features built into Unity and many, many more which are added by Unity's vast ecosystem and straightforward package management system. However, I believe that, being an open source program, as Godot's user base grows, so too shall the number of game engine developers extending, modifying, and improving the engine to suit their needs. This is what I hope for, and why I encourage my fellow hobbyist game developers, especially those who work with 2D games and don't rely especially on any of Unity's conveniences, to try out Godot. Of course, it'll be frustrating getting stuck on something you had figured out long ago in Unity, and there's a lot of learning to be done. But a game jam is a great opportunity to dive in head-first and make mistakes while learning  without the commitment of a larger project. Maybe you'll even enjoy it as much as I have!</p>
+                <br/>
+                <div class="links">
+                    <p><a href="../notebook.html">Return</a></p>
+                </div>
+                <br/>       
+            </div>
+            <br/>
+			<br/>
+            <br/>
+        </div>
+    </body>
+</html>

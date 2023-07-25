@@ -343,7 +343,7 @@
     {
         "file": "othersider",
         "name": "Othersider",
-        "body": "A game created by Nicholas Way and I in 48 hours for the 2022 Global Game Jam, inspired by the theme \"Duality.\" Control one character across multiple levels simultaneously, carrying your momentum between worlds.",
+        "body": "A game created by Nicholas Way and me in 48 hours for the 2022 Global Game Jam, inspired by the theme \"Duality.\" Control one character across multiple levels simultaneously, carrying your momentum between worlds.",
         "links": [
             {
                 "url": "https://eggshelld.itch.io/othersider",
@@ -471,6 +471,31 @@
         ],
         "icon_names": [
             "c-plus-plus"
+        ]
+    },
+    {
+        "file": "star-crossed-rover",
+        "name": "Star-Crossed Rover",
+        "body": "<p>\"A tiny robot with a failing battery falls in love with the moon.\"</p><p>Star-Crossed Rover is a puzzle game created by Kaavya Ramachandhran and me for the WolverineSoft 2023 Beach Game Jam with the theme \"Speed\". We built the game within a week, and it was awarded first place! I also took this game jam as an opportunity to dive into the Godot game engine for the first time.</p>",
+        "links": [
+            {
+                "url": "https://kapitha.itch.io/star-crossed-rover",
+                "text": "play or download the game on itch.io"
+            },
+            {
+                "url": "https://musahaydar.bandcamp.com/album/star-crossed-rover-soundtrack",
+                "text": "listen to the soundtrack on bandcamp"
+            },
+            {
+                "url": "",
+                "text": "read about my experience with Godot"
+            }
+        ],
+        "icon_names": [
+            "game",
+            "jam",
+            "godot",
+            "gdscript"
         ]
     }
 ]

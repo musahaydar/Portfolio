@@ -9,7 +9,7 @@
     },
     "unity": {
         "path": "icons/unity.png",
-        "title": "Unity"
+        "title": "Unity Engine"
     },
     "c-sharp": {
         "path": "icons/c-sharp.png",
@@ -86,5 +86,13 @@
     "c-plus-plus": {
         "path": "icons/c-plus-plus.png",
         "title": "C++"
+    },
+    "godot": {
+        "path": "icons/gear.png",
+        "title": "Godot Engine"
+    },
+    "gdscript": {
+        "path": "icons/gear.png",
+        "title": "GDScript"
     }
 }
