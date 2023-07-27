@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=0.6">
+        <title>Old-School JRPG Text Animation | Notebook | Musa Haydar </title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="icon" href="../images/Moon_Sprite_Big.png">
+    </head>
+    <body>
+        <div class="notebook">
+            <div class="body_header">
+                <h1>Old-School JRPG Text Animation</h1>
+                <div class="subtitle">Musa Haydar | Jul 27, 2023</div>
+                <hr/>
+            </div>
+            <div class="about_body">
+                <div class="body_text">
+                    <p>Many games implement text-printing in the style of old-school JRPGs, where one letter, or a group of letters, are printed to the screen at a time. When this is done well (and at an appropriate speed), it can make a game's dialogue feel quite natural and easy to read. However, I've noticed that many indie games rely on their game engine's text wrapping to begin each next line of text. This causes a word to begin appearing on one line and then jump to the next. Here's an example of how that looks:</p>
+                    <div class="image_row">
+                        <img src="../images/notebook/line_wrapping.gif" style="width:70%;"/>
+                    </div>
+                    <p>There's a pretty straightforward solution to this, and it can add a lot of polish to your game. Consider instead:</p>
+                    <div class="image_row">
+                        <img src="../images/notebook/line_breaking.gif" style="width:70%;"/>
+                    </div>
+                    <p>To accomplish this, let's assume you already have a system implemented to display the text letter-by-letter (or in groups of letters). Then, what this system needs to do is account for the size of each word that will be printed. First, you'll need to know how many characters fit in each line of your text box. If you're not using a monospace font, you'll want to count the maximum number of the widest character (which is often the "m" character). Then, at each space character encountered while printing a block of text, the system should count the number of characters in the next word. If the number of characters printed in this line so far plus the number of the characters in the next word exceeds the maximum, replace that space character with a newline character, and voila!</p>
+                    <div class="thin"><hr /></div>
+                    <p>To clarify, here's a psuedocode example which I've taken from my previous Godot project:</p>
+                    <div class="code_block"><pre>1    var c = text[block][cursor]
+2    if c == " ":
+3        var next_space_pos = text[block].find(" ", cursor + 1)
+4        if next_space_pos == -1:
+5            next_space_pos = text[block].length() - 1
+6        var next_word_len =  next_space_pos - total_displayed - counter
+7        if counter + next_word_len > max_chars:
+8            c = "\n"
+9            total_displayed += counter
+10           counter = 0
+11   cursor += 1
+12   counter += 1
+13   return c</pre></div>
+                    <p>This block of code is taken from a function which returns the next character to print, <span class="code_inline">c</span>. Multiple blocks of dialogue, indexed with <span class="code_inline">block</span>, are stored in the <span class="code_inline">text</span> array. Note that a block here refers to an entire text box of text, which is subsequently divided into multiple "lines" within the text box.</p>
+                    <p>The <span class="code_inline">total_displayed</span> tracks how many characters from this block have been printed thus far, and <span class="code_inline">counter</span> tracks how many characters have been printed to the current line. <span class="code_inline">cursor</span> tracks which character in this block is to be printed next. Thus, when the <span class="code_inline">cursor</span> is on a space, we count the number of characters until the next space (lines 2-6) by counting the characters between <span class="code_inline">cursor</span> and the following space character, if one exists. Then, if this word's length plus <span class="code_inline">counter</span> exceed the <span class="code_inline">max_chars</span> in a line (line 7), the space is replaced with a newline character (line 8) and it is returned as usual.</p>
+                    <p>Note that, per this implementation, the block of text beforehand will contain no newline characters, as they are added by the system when needed.</p>
+                </div>
+                <br/>
+                <div class="links">
+                    <p><a href="../notebook.html">Return</a></p>
+                </div>
+                <br/>       
+            </div>
+            <br/>
+			<br/>
+            <br/>
+        </div>
+    </body>
+</html>
