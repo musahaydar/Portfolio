@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=0.6">
+        <title>Testing a BoltJS Slack Bot | Notebook | Musa Haydar </title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="icon" href="../images/Moon_Sprite_Big.png">
+    </head>
+    <body>
+        <div class="notebook">
+            <div class="body_header">
+                <h1>Testing a BoltJS Slack Bot</h1>
+                <div class="subtitle">Musa Haydar | Dec 31, 2023</div>
+                <hr/>
+            </div>
+            <div class="about_body">
+                <div class="body_text">
+                <p><a href="https://slack.dev/bolt-js/tutorial/getting-started">BoltJS</a> is Slack's JavaScript library for creating Slack bots and integrations. This post outlines the process of testing an application built using BoltJS.</p>
+                <p>At a high level, to test an app written with BoltJs, the goal is to send messages to the app and intercept the responses to verify the correct behavior of the Slack bot's features. The tests are built using the <a href="https://jestjs.io/docs/getting-started">Jest</a> framework. I additionally used <a href="https://github.com/nock/nock#readme">Nock</a> to mock the responses of any external APIs the application may rely on within each unit test.</p>
+                <p>In order to accomplish this, we must provide the BoltJS application with a receiver through which we can send messages to the Slack bot, and then we must mock the <a href="https://www.npmjs.com/package/@slack/web-api"> Slack WebAPI library</a> using Jest. BoltJS sends the Slack bot's responses that invoke the <span class="code_inline">say()</span> utility through the Slack API's <span class="code_inline">postMessage</span> function, as can be seen in <span class="code_inline">App.ts</span> in <a href="https://github.com/slackapi/bolt-js/blob/%40slack/bolt%402.3.0/src/App.ts#L536">BoltJS's source code.</a></p>
+                <p>The content of this post was created using BoltJS version 3.14.0.</p>
+                <h3>BoltJs Mock Receiver</h3>
+                <p>The first step is to be able to send the Slack bot messages, which will be received and matched by the functions registered with <span class="code_inline">app.message(...)</span> in your BoltJS application. To do this, we need to create a mock receiver through which we can send messages.</p>
+                <p>The following implementation of the mock receiver is based on <a href="https://github.com/IBM/slack-wrench">IBM's Slack Wrench library</a>, which has an <a href="https://github.com/IBM/slack-wrench/tree/main/packages/jest-bolt-receiver">implementation of a mock receiver.</a></p>
+                <div class="code_block"><pre>class JestReceiver {
+    init(app) {
+        this.app = app;
+    }
+
+    async send(body) {
+        const event = {
+            body,
+            ack: jest.fn(),
+        };
+        await this.app?.processEvent(event);
+        return event;
+    }
+
+    // For compatibility with Receiver, does nothing
+    start() {
+        return Promise.resolve();
+    }
+
+    // For compatibility with Receiver, does nothing
+    stop() {
+        return Promise.resolve();
+    }
+}
+
+module.exports = JestReceiver;</pre></div>
+                <p>Here, we define <span class="code_inline">start()</span> and <span class="code_inline">stop()</span> function stubs which are required by the receiver, and then in the send function, we create a Jest mock for the <span class="code_inline">ack()</span> function included in the event. Then, we invoked the BoltJS app's <span class="code_inline">processEvent</span> function using the event we constructed. Thus, we can provide the content of the message we want to send the application by setting the <span class="code_inline">body</span> parameter of the <span class="code_inline">send</span> function. Naturally, the BoltJS app will expect the event payload to be formatted a particular way; more on this in the following section.</p>
+                <p>Next, we need to initialize the BoltJS application using the mock receiver. To do so, we need to provide the receiver as a parameter to the BoltJS <span class="code_inline">App(...)</span> constructor, as follows:</p>
+                <div class="code_block"><pre>const { App } = require('@slack/bolt');
+
+module.exports = function startTestApp(receiver) {
+    const fakeAuth = () => Promise.resolve({
+        botUserId: "BOTUSERID"
+    });
+                    
+    const app = new App({
+        authorize: fakeAuth,
+        receiver: receiver
+    });
+                    
+    // add any skills here
+
+    // begin running Bolt app
+    (async () => {
+        await app.start();
+    })();
+    
+    return app;
+}</pre></div>
+                <p>Here, we pass an instance of the mock receiver into the <span class="code_inline">startTestApp</span> function. Note that BoltJS will complain if the <span class="code_inline">token</span>, <span class="code_inline">appToken</span>, or <span class="code_inline">socketMode</span> parameters are set in the constructor. For this reason, I opted to create a separate function specifically to create a test app, importing the bot's skills from other files. It may be easier in your use case simply to conditionally omit those parameters in your actual bot's <span class="code_inline">App</span> constructor.</p>
+                <p>We also mock the authorization function to allow the bot to initialize. This <span class="code_inline">fakeAuth</span> function may simply return an empty promise. However, if the bot has any features which depend on the bot being mentioned, we must initialize the bot with a <span class="code_inline">botUserID</span>, as shown above. Other mocked bot initialization values can likewise be set here.</p>
+                <h3>Event Formatting and Fixtures</h3>
+                <p>When sending a message to your BoltJS application using the mock receiver, the body of the event must be formatted correctly. <a href="https://github.com/IBM/slack-wrench/tree/main/packages/fixtures">Slack Wrench's Fixtures</a> can be leveraged for this. However, I would recommend building these fixtures yourself so they can be customized to fix the needs of your test case. Here, for example, is the default payload used by my tests, with the values for the variables borrowed from Slack Wrench:</p>
+                <div class="code_block"><pre>static eventDefault = {
+    type: 'event_callback',
+    token: 'TOKEN',
+    team_id: 'TTEAMID',
+    api_app_id: 'API_APP_ID',
+    event_id: 'EVENT_ID',
+    event_time: 1234567890,
+    authed_users: ['UUSERID'],
+    event: {
+        type: 'message',
+        text: '',
+        channel_id: 'CCHANNELID',
+        user_id: 'UUSERID',
+        ts: '0000000000.000000',
+    }
+}</pre></div>
+                <p>Now, we can simply add a value for the <span class="code_inline">event.text</span> field and that message will be received by the Slack application.</p>
+                <p>Another use case is testing messages sent directly to the bot. To accomplish this, we can simply set <span class="code_inline">event.channel_type = "im"</span>. Furthermore, to test messages which mention the bot (which the bot may be specifically listening for using the <span class="code_inline">directMention()</span> built in middleware), we can prepend the <span class="code_inline">event.text</span> field with the string <span class="code_inline">"<@BOTUSERID> "</span> (mind the space at the end). Note that <span class="code_inline">BOTUSERID</span> has to match the <span class="code_inline">botUserID</span> specified in the mock authorization function, listed above.</p>
+                <p>To use these fixtures, I recommend creating helper functions which take any parameters (e.g. the message to send to the bot), deep copies and modifies the default event with these values, and returns that event object.</p>
+                <h3>Mocking the Slack API</h3>
+                <p>In order to mock the Slack WebAPI library, we can insert the following Jest mock in our test file.
+                This code was modified from <a href="https://stackoverflow.com/questions/66991895/mock-slack-web-api-jest/66996611#66996611">this StackOverflow answer</a>. Note the addition of a mock for the
+                <span class="code_inline">addAppMetadata</span> function, without which the BoltJS constructor will error. Here, we will create an object which is returned by the <span class="code_inline">WebClient</span> constructor, and this object contains a mock for the <span class="code_inline">postMessage</span> function.</p>
+                <div class="code_block"><pre>jest.mock('@slack/web-api', () => {
+    const mSlack = {
+        chat: {
+            postMessage: jest.fn()
+        }
+    };
+    return {WebClient: jest.fn(() => mSlack), addAppMetadata: jest.fn() };
+});</pre></div>
+                <h3>Writing a Test</h3>
+                <p>Finally, with all the pieces in place, we can create a Jest test as follows:</p>
+                <div class="code_block"><pre>describe('Test BoltJS Bot', () => {
+    const message = 'hello';
+    const response = 'Hello. I am a Slack bot.';
+    
+    beforeEach(() => {
+        this.receiver = new JestReceiver();
+        this.app = startTestApp(this.receiver);
+    });
+                        
+    afterEach(() => {
+        this.app.stop();
+        // clear mocks after each test!
+        jest.clearAllMocks();
+    });
+                        
+    it('Basic Test', async () => {
+        // need to await this since the reciever is an async call
+        await this.receiver.send(Fixtures.messageEvent(message));
+        expect(this.app.client.chat.postMessage).toHaveBeenCalledWith(
+            expect.objectContaining({ text: response })
+        );
+    });
+}</pre></div>
+                <p>Here's a breakdown of this test: first we define a message and the expected response from the bot. Before the test, we construct an instance of the aforementioned mock receiver and pass it as a parameter to the <span class="code_inline">startTestApp</span> function. After the test is over, we stop the app and clear any Jest mocks so the tests do not interfere with each other.</p>
+                <p>In the actual test, we invoke <span class="code_inline">this.receiver.send()</span> with the message structured using the fixture above. Here, my <span class="code_inline">Fixtures.messageEvent(...)</span> helper function simply inserts the message string into the <span class="code_inline">event.text</span> field and returns it. Note that the <span class="code_inline">send</span> function must be awaited, since the receiver makes an asynchronous call.</p>
+                <p>Finally, we define what we expect from the test. Here, we expect the app's client's <span class="code_inline">postMessage</span> function, which we mocked above, to be called with an object containing our defined response.</p>
+                <p>With everything in place, the test will send the message to the mock receiver, which will invoke the slack bot's skill, assuming the bot has a function registered which listens for the message being sent. Then, the bot will respond using the <span class="code_inline">postMessage</span> function within BoltJS, which we've mocked, and therefore, we can read the value passed to it by the bot to ensure the bot responds correctly, and our unit test is complete.</p>
+                <h3>Other Use Case Examples</h3>
+                <p>Likewise, we can use these techniques to test other slack bot functionality. For example, to test an incoming slash command to our bot, we can create a fixture which Bolt will view as such. This, and other such use cases, may take some digging to create a proper fixture. For instance, in order for an incoming event to be considered a slash command, <a href="https://github.com/slackapi/bolt-js/blob/%40slack/bolt%402.3.0/src/helpers.ts#L30">Bolt's source code</a> shows that the body's <span class="code_inline">event</span> field must be <span class="code_inline">undefined</span>. Thus, a fixture for a slash command <span class="code_inline">\command test</span> would look something like this:</p>
+                <div class="code_block"><pre>static commandEvent = {
+    type: 'event_callback',
+    command: '\command',
+    text: 'test',
+    token: 'TOKEN',
+    team_id: 'TTEAMID',
+    api_app_id: 'API_APP_ID',
+    event_id: 'EVENT_ID',
+    event_time: 1234567890,
+    authed_users: ['UUSERID'],
+    event: undefined
+}
+                </pre></div>
+                <p>As another example, if we wanted to test the Slack bot's ability to open modals, we would mock the <span class="code_inline">client.views.open</span> function and compare the blocks that were sent by the bot to what we're expecting:</p>
+                <div class="code_block"><pre>jest.mock('@slack/web-api', () => {
+    const mSlack = {
+        views: {
+            open: jest.fn()
+        }
+    };
+    return { WebClient: jest.fn(() => mSlack), addAppMetadata: jest.fn() };
+});</pre></div>
+                </p>Then, we could build a <span class="code_inline">view_submission</span> fixture, like the one <a href="https://github.com/IBM/slack-wrench/blob/main/packages/fixtures/src/view.ts">provided in the Slack Wrench library</a>, setting <span class="code_inline">state.values</span> to test the bot's behavior for various inputs provided to the bot within the modal.</p>
+                </div>
+                <br/>
+                <div class="links">
+                    <p><a href="../notebook.html">Return</a></p>
+                </div>
+                <br/>       
+            </div>
+            <br/>
+			<br/>
+            <br/>
+        </div>
+    </body>
+</html>

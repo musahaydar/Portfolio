@@ -179,7 +179,6 @@ h1 {
     color: #8f8f8f;
 }
 
-
 .project_date {
     text-decoration: underline;
     text-decoration-thickness: 1.5px;
@@ -199,8 +198,8 @@ h1 {
 }
 
 .code_block {
-    font-size: 80%;
-    line-height: 16px;
+    font-size: 90%;
+    line-height: 18px;
     background-color: rgb(240, 240, 240);
     padding-left: 15px;
     width: 100%;

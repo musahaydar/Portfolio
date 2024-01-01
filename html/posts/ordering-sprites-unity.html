@@ -47,7 +47,7 @@ public class AbsoluteSortingOrder : MonoBehaviour {
     SpriteRenderer spr;
 
     void Start() {
-        spr = gameObject.GetComponent<SpriteRenderer>();
+        spr = gameObject.GetComponent&#60;SpriteRenderer>();
     }
 
     //sets an objects sorting order relative to its Y position
@@ -89,7 +89,7 @@ public class RelativeSortingOrder : MonoBehaviour {
     float buffer = 0.05f;
 
     void Start(){
-        sprRenderer = this.gameObject.GetComponent<SpriteRenderer>();
+        sprRenderer = this.gameObject.GetComponent&#60;SpriteRenderer>();
         target = GameObject.FindGameObjectWithTag(targetTag);
     }
 
