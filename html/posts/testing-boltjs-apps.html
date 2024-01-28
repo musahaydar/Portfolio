@@ -97,7 +97,7 @@ module.exports = function startTestApp(receiver) {
 }</pre></div>
                 <p>Now, we can simply add a value for the <span class="code_inline">event.text</span> field and that message will be received by the Slack application.</p>
                 <p>Another use case is testing messages sent directly to the bot. To accomplish this, we can simply set <span class="code_inline">event.channel_type = "im"</span>. Furthermore, to test messages which mention the bot (which the bot may be specifically listening for using the <span class="code_inline">directMention()</span> built in middleware), we can prepend the <span class="code_inline">event.text</span> field with the string <span class="code_inline">"<@BOTUSERID> "</span> (mind the space at the end). Note that <span class="code_inline">BOTUSERID</span> has to match the <span class="code_inline">botUserID</span> specified in the mock authorization function, listed above.</p>
-                <p>To use these fixtures, I recommend creating helper functions which take any parameters (e.g. the message to send to the bot), deep copies and modifies the default event with these values, and returns that event object.</p>
+                <p>To use these fixtures, I recommend creating helper functions which take any parameters (e.g. the message to send to the bot), deep-copies and modifies the default event with these values, and returns that event object.</p>
                 <h3>Mocking the Slack API</h3>
                 <p>In order to mock the Slack WebAPI library, we can insert the following Jest mock in our test file.
                 This code was modified from <a href="https://stackoverflow.com/questions/66991895/mock-slack-web-api-jest/66996611#66996611">this StackOverflow answer</a>. Note the addition of a mock for the
@@ -147,13 +147,13 @@ module.exports = function startTestApp(receiver) {
     text: 'test',
     token: 'TOKEN',
     team_id: 'TTEAMID',
+    channel_id: 'CCHANNELID',
     api_app_id: 'API_APP_ID',
     event_id: 'EVENT_ID',
     event_time: 1234567890,
     authed_users: ['UUSERID'],
     event: undefined
-}
-                </pre></div>
+}</pre></div>
                 <p>As another example, if we wanted to test the Slack bot's ability to open modals, we would mock the <span class="code_inline">client.views.open</span> function and compare the blocks that were sent by the bot to what we're expecting:</p>
                 <div class="code_block"><pre>jest.mock('@slack/web-api', () => {
     const mSlack = {
