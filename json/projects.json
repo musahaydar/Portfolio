@@ -517,5 +517,22 @@
             "fl-studio",
             "lmms"
         ]
+    },
+    {
+        "file": "the-ballroom-problem",
+        "name": "The Ballroom Problem",
+        "body": "<p>The Ballroom Problem is a two-player game where each player must find themselves, find the other player, and then murder them in a dark ballroom before they are caught. It was created for the 2023 WolverineSoft Mega Jam by Nicholas Way, Jacob Robinson, and I. We additionally incorporated some art assets from Szadi Art for the background. We won first place!</p><p>The Ballroom Problem turned out to be a lot of fun to play! Each player controls a dancer and a light, which they move independently. Since all the dancers (except the two player-controlled dancers) arrange themselves in the room in a synchronized dance, each player must try to blend in with the dancers by timing their movements, especially when a light is upon them.</p><p>The game works best with two controllers, and at least one is required. If only one controller is available, the other player may use Keyboard controls instead.</p>",
+        "links": [
+            {
+                "url": "https://eggshelld.itch.io/ballroom-problem",
+                "text": "download the game on Itch.io"
+            }
+        ],
+        "icon_names": [
+            "game",
+            "jam",
+            "unity",
+            "c-sharp"
+        ]
     }
 ]
