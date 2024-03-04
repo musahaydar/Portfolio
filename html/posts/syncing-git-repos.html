@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=0.6">
+        <title>Syncing Git Repos Between Computers | Notebook | Musa Haydar </title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="icon" href="../images/Moon_Sprite_Big.png">
+    </head>
+    <body>
+        <div class="notebook">
+            <div class="body_header">
+                <h1>Syncing Git Repos Between Computers</h1>
+                <div class="subtitle">Musa Haydar | Mar 03, 2024</div>
+                <hr/>
+            </div>
+            <div class="about_body">
+                <div class="body_text">
+                    <p>This post outlines a method for syncronizing a Git repository between two computers, where one is running Linux or MacOS (the "local" machine) and the other is running Windows (the "remote" machine). My use case for this was to synchronize my <a href="https://obsidian.md">Obsidian vault</a> between my laptop and desktop computers, but this method can really be used to synchronize any content between computers using Git, without using any intermediary Git server.</p>
+                    <p>The approach taken is as follow: first, we configure the SSH server on the remote machine through Windows Subsystem for Linux (WSL). Then, we create a repo on the remote machine which the local machine will pull from and push to.</p>
+                    <h3>Setting Up SSH via WSL</h3>
+                    <p>The first step will be to configure the SSH server on the Windows machine through which Git will connect. I opted to do this through WSL-2 (Ubuntu), since that will make it easy to run Git commands on my Windows machine as well. My source for these instructions is <a href="https://jmmv.dev/2022/02/wsl-ssh-access.html">Julio Merino's blog post</a> on this topic. Take a look at the troubleshooting section at the end of this post if you encounter any errors while starting the SSH server. For instance, on my machine, I had WSL-2 installed beforehand, but had to reinstall the SSH service before it could run.</p>
+                    <p>Note that on this page, an initial <span class="code_inline">$</span> symbol represents the prompt of a WSL command and a <span class="code_inline">&gt;</span> symbol represents the prompt of a Windows Powershell command. Neither are part of the actual command.</p>
+                    <p>On WSL, run the following command to start the SSH server:</p>
+                    <div class="code_block"><pre>$ sudo /usr/sbin/service ssh start</pre></div>
+                    <p>The following command can be used to check the status of the SSH server:</p>
+                    <div class="code_block"><pre>$ systemctl status ssh.service</pre></div>
+                    <p>If the service started successfully, the output should include something like this&mdash;note the "active (running)":</p>
+                    <div class="code_block"><pre>&#x25cf; ssh.service - OpenBSD Secure Shell server
+    Loaded: loaded (/lib/systemd/system/ssh.service; enabled; vendor preset: enabled)
+    Active: active (running) since Sun 2024-03-03 17:36:43 EST; 1h 57min ago</pre></div>
+                    <p>Next, we'll configure the port we want the SSH server to listen to. I expect the default port may be used since Git will be operating over SSH, but I used the custom port <span class="code_inline">2022</span> as the guide linked above did, perhaps so that one might run SSH on their Windows machine via port 22. (Anyway, it seems that port <span class="code_inline">2022</span> is <a href="https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml?search=2022">no longer the well-known port</a> of any <a href="https://superuser.com/questions/1818510/what-is-the-down-service-at-port-2022">extant application.</a>) We can configure the port and restart the service with the following commands:</p>
+                    <div class="code_block"><pre>$ sudo sed -i -E 's,^#?Port.*$,Port 2022,' /etc/ssh/sshd_config
+$ sudo service ssh restart</pre></div>
+                    <p>Next, we have to open a firewall rule on Windows to allow incoming traffic on port <span class="code_inline">2022</span>. (Again, credit for these instructions is to <a href="https://jmmv.dev/2022/02/wsl-ssh-access.html">Julio Merino</a>) In Powershell (with administrator privleges) run the following command:</p>
+                    <div class="code_block"><pre>&gt; New-NetFirewallRule -Name sshd -DisplayName 'OpenSSH Server (sshd) for WSL' -Enabled True -Direction Inbound -Protocol TCP -Action Allow -LocalPort 2022</pre></div>
+                    <p>In Merino's words: "And then we have to route incoming traffic on the physical interface to the WSL interface via a 'port proxy' rule. This is made extra complicated because the IP given to the WSL instance is not stable over time, so we need to figure that out dynamically." We'll create a batch script called <span class="code_inline">sshd.bat</span>. The contents of the file will be the following:
+                    <div class="code_block"><pre>@echo off
+setlocal
+
+C:\Windows\System32\bash.exe -c "sudo /usr/sbin/service ssh start"
+
+C:\Windows\System32\netsh.exe interface portproxy delete v4tov4 listenport=2022 listenaddress=0.0.0.0 protocol=tcp
+
+for /f %%i in ('wsl hostname -I') do set IP=%%i
+C:\Windows\System32\netsh.exe interface portproxy add v4tov4 listenport=2022 listenaddress=0.0.0.0 connectport=2022 connectaddress=%IP%
+
+endlocal
+</pre></div>
+                    <p>Store this file somewhere you remember, as you may need to run it before you attempt to connect over SSH in the future. You can also follow <a href="https://superuser.com/a/851133">these instructions</a> to run this script automatically on login (though you may need to ensure WSL starts before <span class="code_inline">sshd.bat</span> is run&mdash;I didn't bother with this, as it seems <span class="code_inline">sshd.bat</span> doesn't need to be run frequently).</p>
+                    <p>At this point, the SSH server over port <span class="code_inline">2022</span> should be accessible from either machine. You can connect to it from SSH on Powershell (via <span class="code_inline">ssh -p 2022 &lt;user&gt;@localhost</span>) or from the local machine (via <span class="code_inline">ssh -p 2022 &lt;user&gt;@&lt;machine&gt;.local</span>) to ensure that it's working (filling in <span class="code_inline">&lt;user&gt;</span> and <span class="code_inline">&lt;machine&gt;</span> with the WSL username and Windows computer name respectively).</p>
+                    <h3>Configuring Git</h3>
+                    <p>Now, we'll create the Git repo on the remote machine and configure Git on the local machine to push to it. On the remote machine, we'll create a new repo with the following commands:</p>
+                    <div class="code_block"><pre>$ mkdir path/to/repo
+$ cd path/to/repo
+$ git init
+$ git checkout -b tmp</pre></div>
+                    <p>Per the last command, we checkout a branch (in this case, <span class="code_inline">tmp</span>) different from the one we'll be pushing to (in this case, <span class="code_inline">master</span>); Git will complain when we try to push otherwise.</p>
+                    <p>Now, on the local machine, we need to configure Git to connect to the remote machine via port <span class="code_inline">2022</span> by appending the following lines to <span class="code_inline">~/.ssh/config</span>:</p>
+                    <div class="code_block"><pre>Host &lt;machine&gt;.local
+    User &lt;user&gt;
+    Port 2022</pre></div>
+                    <p>Finally, we'll run these commands in the local machine's repo to push it to the remote repo. This assumes that the remote repo named "origin" is not in use, for example by a GitHub repo. If this is not the case, we can simply give the remote branch a different name.</p>
+                    <div class="code_block"><pre>$ git remote add origin &lt;user&gt;@&lt;machine&gt;.local:path/to/repo
+$ git push origin master</pre></div>
+                    <p>Once everything is set up, we can take the following steps to push to our remote repo in the future:</p>
+                    <ul>
+                        <li>Ensure the SSH server is running on WSL on the remote machine with <span class="code_inline">systemctl status ssh.service</span>; if necessary start it with <span class="code_inline">sudo /usr/sbin/service ssh start</span></li>
+                        <li>Run <span class="code_inline">sshd.bat</span> if the connection from local fails</li>
+                        <li>Push to the remote repo using <span class="code_inline">git push</span></li>
+                    </ul>
+                    <p>If you check out the master branch on the remote machine, you'll need to pull your changes to the local repo and then temporarily checkout another branch before you can push your changes to it.</p>
+                    <h3>Troubleshooting SSH on WSL</h3>
+                    <p>&#x25cf; When setting up the SSH server on my machine, I encountered a problem where the server could not start. Unfortunately, I was unable to reproduce the exact error. However, if none of the following troubleshooting advice works, it can't hurt to reinstall the SSH server package, which was what resolved my issue:</p>
+                    <div class="code_block"><pre>$ sudo apt-get remove --purge openssh-server
+$ sudo apt-get install openssh-server</pre></div>
+                     
+                    <p>&#x25cf; If running <span class="code_inline">git push</span> on the local machine hangs (without any output or error), ensure the <span class="code_inline">~/.ssh/config</span> local machine name is  correct. Note that the remote machine name name is case sensitive.</p>
+
+                    <p>&#x25cf; If running <span class="code_inline">sudo /usr/sbin/service ssh start</span> produces the following error</p>
+                    <div class="code_block"><pre> * Starting OpenBSD Secure Shell server sshd
+   sshd: no hostkeys available -- exiting.</pre></div>
+                    <p>generate SSH keys with the following command:</p>
+                    <div class="code_block"><pre>$ sudo ssh-keygen -A</pre></div>
+                    
+                    <p>&#x25cf; If starting the SSH server and checking its status produces the following output</p>
+                    <div class="code_block"><pre>$ sudo /usr/sbin/service ssh start
+
+* Starting OpenBSD Secure Shell server sshd
+
+$ systemctl status ssh.service
+
+System has not been booted with systemd as init system (PID 1). Can't operate.
+Failed to connect to bus: Host is down</pre></div>
+                    <p>then you need to enable <span class="code_inline">systemd</span> on WSL-2. More information on this issue can be <a href="https://askubuntu.com/a/1379567">found here.</a> The steps for this are the following: update to WSL-2 by running <span class="code_inline">wsl --update</span> in Windows Powershell. Then, in WSL, add the following lines to <span class="code_inline">/etc/wsl.conf</span>:<div class="code_block"><pre>[boot]
+systemd=true</pre></div>
+                    <p>Finally, restart WSL-2 (run <span class="code_inline">wsl --shutdown</span> in Powershell)</p>
+                </div>
+                <br/>
+                <div class="links">
+                    <p><a href="../notebook.html">Return</a></p>
+                </div>
+                <br/>       
+            </div>
+            <br/>
+			<br/>
+            <br/>
+        </div>
+    </body>
+</html>
