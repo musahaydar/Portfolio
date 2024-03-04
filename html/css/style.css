@@ -83,6 +83,14 @@ h3 {
     text-align: center;
 }
 
+h4 {
+    text-align: center;
+    font-family:  'Ubuntu Mono', monospace;
+    font-weight: normal;
+    line-height: 26px;
+    margin: 8px;
+}
+
 .projects_body h3 {
     text-align: center;
     font-family:  'Ubuntu Mono', monospace;
@@ -168,10 +176,12 @@ h1 {
 }
 
 .project_subtitle {
-    padding-left: 4%;
-    font-size: 11pt;
+    /* padding-left: 2%; */
+    font-size: 10pt;
     line-height: 22px;
     color: #8f8f8f;
+    vertical-align: center;
+    text-align: center;
 }
 
 .subtitle {
