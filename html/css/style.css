@@ -125,6 +125,18 @@ h1 {
     margin-top: 90px;
 }
 
+.notebook_wide {
+    width: 900px;
+    margin: auto;
+    margin-top: 90px;
+}
+
+.notebook_inner {
+    width: 640px;
+    margin: auto;
+    margin-top: 40px;
+}
+
 .content_body {
     font-family: 'Source Serif Pro', serif;
     font-size: large;
