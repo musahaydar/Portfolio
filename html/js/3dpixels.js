@@ -15,8 +15,9 @@ function setup() {
 }
 
 function draw() {
-    orbitControl(1, 1, 0, {freeRotation: false});
-    
+    orbitControl(1, 1, 0);
+
+    rotateY(15);
     background(255);
     translate(-scale * (img.width / 2), -scale * (img.height / 2));
 
@@ -30,7 +31,7 @@ function draw() {
                 }
                 push()
                 let rrow = ceil(row - (img.width/2));
-                let angle = 25 * sin(frameCount);
+                let angle = 28 * sin(frameCount);
                 translate(0, 0, tan(angle) * scale * rrow);
                 rotateY(-angle);
                 box(scale, scale, depth * scale);
