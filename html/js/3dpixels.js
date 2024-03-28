@@ -5,12 +5,14 @@ let outline = false;
 
 function preload() {
     img = loadImage("images/sprite.png");
+    depthmap = loadImage("images/sprite_depth_map.png");
 }
 
 function setup() {
     let canvas = createCanvas(img.width * scale, img.height * scale, WEBGL);
     canvas.parent("p5-container");
     img.loadPixels();
+    depthmap.loadPixels();
     angleMode(DEGREES);
 }
 
@@ -34,7 +36,7 @@ function draw() {
                 let angle = 28 * sin(frameCount);
                 translate(0, 0, tan(angle) * scale * rrow);
                 rotateY(-angle);
-                box(scale, scale, depth * scale);
+                box(scale, scale, (((depthmap.pixels[idx] / 32) * 2) + 1) * scale);
                 pop()
             }
             translate(scale, 0);
