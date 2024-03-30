@@ -264,6 +264,25 @@ pre {
     padding-top: 4px;
 }
 
+/* For p5.js */
+
+#p5-container {
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#p5-ui {
+    display: block;
+    margin: 20px;
+}
+
+canvas {
+    border-radius: 12px;
+}
+
 /* LINKS STYLE */
 
 a {
@@ -286,6 +305,7 @@ a {
     text-decoration: underline;
     text-decoration-thickness: 1.5px;
 }
+
 
 /* order here matters, this should be below the about_body a style */
 .links a {
