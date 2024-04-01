@@ -88,7 +88,7 @@
         "title": "C++"
     },
     "godot": {
-        "path": "icons/gear.png",
+        "path": "icons/godot.png",
         "title": "Godot Engine"
     },
     "gdscript": {
