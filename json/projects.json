@@ -534,5 +534,20 @@
             "unity",
             "c-sharp"
         ]
+    },
+    {
+        "file": "spotify-data-exporter",
+        "name": "Spotify Data Exporter",
+        "body": "<p>In the event that Spotify becomes unavailable, or more generally that some content should be removed, I wanted a way to export my metadata (saved albums, playlist tracks, etc) so that information remains available to me. To do this, I wrote a Python script which connects to the Spotify API using the <a href=\"https://spotipy.readthedocs.io/\">Spotipy</a> library.</p><p>Unlike my previous Spotify exporting script, Spotipy allows you to authenticate a user by logging in via a web browser. This requires you to set up an application via Spotify's developer portal if you wish to use the app, but it then allows you to export private user data.</p><p>The main features I wanted and built into this script is a method to export a list of my saved albums into a CSV format, as well as a way to export playlists. Since the API can only fetch public playlists for a user, and not all saved playlists, I implemented a feature to use playlist URLs listed in a file. When this script exports a playlist, it creates a folder for the playlist, saving the playlist's image, the track list into a CSV file, as well as writing the original playlist name into a text file (in case it contained special characters so the folder could not be named after the playlist). There are some other neat features in the works as well.</p>",
+        "links": [
+            {
+                "url": "https://github.com/musahaydar/Spotify-Data-Exporter",
+                "text": "view source code or download on GitHub"
+            }
+        ],
+        "icon_names": [
+            "command-line",
+            "python"
+        ]
     }
 ]
