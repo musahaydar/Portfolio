@@ -368,7 +368,11 @@
             },
             {
                 "url": "https://musahaydar.bandcamp.com/album/ill-miss-you-snowy-duet-version",
-                "text": "listen to the track I'll Miss You (Snowy Duet Version)"
+                "text": "listen to the track \"I'll Miss You (Snowy Duet Version)\""
+            },
+            {
+                "url": "https://musah.net/pdf/lovely_abandon_score.pdf",
+                "text": "view the score for \"Lovely Abandon\""
             }
         ],
         "icon_names": [
