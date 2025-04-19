@@ -2,6 +2,7 @@ let img;
 let scale = 2.5;
 let depth = 3;
 let outline = false;
+let rot_angle = -28;
 
 function preload() {
     img = loadImage("images/sprites/sprite.png");
@@ -14,6 +15,18 @@ function setup() {
     img.loadPixels();
     depthmap.loadPixels();
     angleMode(DEGREES);
+    setTimeout(set_startup_spin, 200);
+}
+
+function set_startup_spin() {
+    frameCount = 0;
+    rot_angle = -720;
+    setTimeout(set_normal_spin, 1500);
+}
+
+function set_normal_spin() {
+    rot_angle = -28;
+    frameCount = 0;
 }
 
 function draw() {
@@ -31,7 +44,7 @@ function draw() {
                 }
                 push()
                 let rrow = ceil(row - (img.width/2));
-                let angle = -28 * sin(frameCount);
+                let angle = rot_angle * sin(frameCount);
                 let r = (rrow * scale);
                 let delta_z = r * sin(angle);
                 let delta_x = r - (delta_z / tan(angle));
