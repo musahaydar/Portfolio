@@ -3,6 +3,7 @@ let scale = 2.5;
 let depth = 3;
 let outline = false;
 let rot_angle = -28;
+let startup = false;
 
 function preload() {
     img = loadImage("images/sprites/sprite.png");
@@ -21,7 +22,7 @@ function setup() {
 function set_startup_spin() {
     frameCount = 0;
     rot_angle = -720;
-    setTimeout(set_normal_spin, 1500);
+    startup = true;
 }
 
 function set_normal_spin() {
@@ -56,5 +57,11 @@ function draw() {
             translate(scale, 0);
         }
         translate(-scale * img.width, scale);
+    }
+    if (startup) {
+        if (rot_angle * sin(frameCount) < -718) {
+            startup = false;
+            set_normal_spin();
+        }
     }
 }
