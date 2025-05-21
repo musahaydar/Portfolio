@@ -243,6 +243,13 @@ pre {
     background-color: rgb(240, 240, 240);
 }
 
+.quote {
+    width: 80%;
+    font-style: italic;
+    text-align: center;
+    margin: auto;
+}
+
 .log_title {
     padding-top: 2%;
     padding-left: 2%;
