@@ -553,5 +553,42 @@
             "command-line",
             "python"
         ]
+    },
+    {
+        "file": "tiara-demo",
+        "name": "Tiara (Demo Version)",
+        "body": "<p>Tiara is an exploration-focused narrative game where you play through a number of days (and dream through a number of nights) to uncover the story of Tiara's life.</p><p>The game takes place over an eventful month after Tiara has decided not to pursue the life her father wants from her any longer.</p><p>As you play through the days you'll encounter strange situations and surreal dreams with many mysteries to work out. Each day involves exploring a number of environments, interacting with characters, and working out game mechanics. These explorations will help you understand what occurred during this month of Tiara's life.</p><p>Tiara's gameplay and aesthetics are inspired primarily by Petscop and Yume Nikki. The game is currently in development.</p>",
+        "links": [
+            {
+                "url": "https://musahaydar.itch.io/tiara-demo",
+                "text": "download and play the demo on Itch.io"
+            },
+            {
+                "url": "https://store.steampowered.com/app/3977770",
+                "text": "wishlist the full game on Steam"
+            },
+            {
+                "url": "https://www.youtube.com/watch?v=ykO6Fpa-6SA",
+                "text": "watch the demo trailer on YouTube"
+            },
+            {
+                "url": "https://discord.gg/PwmRkq32Tf",
+                "text": "join the community Discord server"
+            },
+            {
+                "url": "https://www.youtube.com/@tiarathegame",
+                "text": "see more on the Tiara YouTube channel"
+            },
+            {
+                "url": "http://instagram.com/tiara.the.game",
+                "text": "follow on Instagram"
+            }
+        ],
+        "icon_names": [
+            "game",
+            "jam",
+            "unity",
+            "c-sharp"
+        ]
     }
 ]
