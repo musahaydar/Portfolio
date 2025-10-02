@@ -586,9 +586,8 @@
         ],
         "icon_names": [
             "game",
-            "jam",
-            "unity",
-            "c-sharp"
+            "godot",
+            "gdscript"
         ]
     }
 ]
