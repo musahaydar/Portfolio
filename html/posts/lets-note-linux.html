@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=0.6">
+        <title>Panasonic Let's Note &lt;3 Linux | Notebook | Musa Haydar </title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="icon" href="../images/Moon_Sprite_Big.png">
+    </head>
+    <body>
+        <div class="notebook">
+            <div class="body_header">
+                <h1>Panasonic Let's Note &lt;3 Linux</h1>
+                <div class="subtitle">Musa Haydar | Nov 17, 2025 </div>
+                <hr/>
+            </div>
+            <div class="about_body">
+                <div class="body_text">
+                    <br/>
+                    <div class="image_row">
+                        <img src="../images/notebook/panasonic_lets_note.jpg" style="width:70%;height:70%;border:2px solid black;"/>
+                    </div>
+                    <p>Ever since I saw the <a href="https://www.youtube.com/watch?v=FLG08-xJGyM">Linus Tech Tips video</a> reviewing a Panasonic Let's Note, I've wanted to get my hands on one to use as a Linux machine. The 2022 model featured in the video was the last that included a DVD reader, one of the features that drew me to the laptop, so I knew I'd be picking up an older model.</p>
+                    <p>The model I picked up was a $140 order from a Japanese reseller, a CF-SZ6 from 2016. This model features plenty of I/O (3x USB-A, SD Card, DVD, HDMI, Ethernet, and some other stuff for which I have no need), a 7th-gen Intel Core i5, and its iconic circular trackpad. It's not a particularly thin laptop, but has a lightweight metal chassis, with the laptop being smaller than and weighing less than my M2 MacBook Air.</p>
+                    <p>The appeal of repurposing this old business laptop is similar to that of an older ThinkPad as a Linux machine (a laptop which has earned <a href="https://www.reddit.com/r/thinkpad/">something of a cult following</a>), especially given I don't intend to put it to any challenging graphics or computing tasks.
+                    <h3>Running Linux</h3>
+                    <p>The Let's Note came pre-installed with a Windows 11 in Japanese, which ran rather slow (to no one's surprise). The English language pack was not pre-installed and although Windows 11 wasn't unusably slow on the device, it was annoying to deal with, so I moved on.</p>
+                    <p>My distro of choice for this machine was Fedora 43, since the last time I had been using Linux, it was RHEL running on university research servers. I went with the <a href="https://www.fedoraproject.org/spins/mate">MATE+Compiz spin</a>, since as a kid I had (without knowing what Linux was at the time) used a machine running Fedora 18 or 19 (I'm not sure which) with GNOME 2. Then, in highschool, when I actually learned what Linux is and how to use it, I ran CentOS but was not pleased with GNOME 3 at all. After that I switched to Ubuntu and then Pop_OS. It's been a long time since GNOME 3, and I hear that later versions of GNOME have improved a lot, but for now I'm sticking with <a href="https://mate-desktop.org/">MATE (a fork of GNOME 2)</a> for the nostalgia.</p>
+                    <p>Not Let's Note specific, but unfortunately, the main-menu editor (Mozo) seems broken out of the box in the latest Fedora MATE+Compiz spin. Onformation on this issue is available at this <a href="https://www.linuxquestions.org/questions/slackware-14/current-upgrade-sept-7-breaks-mozo-in-mate-4175753969/">thread about Slackware</a>. If there are other such issues, that may give me a reason to try out the latest GNOME.</p>
+                    <p>Pictured above is the laptop running Fedora MATE+Compiz with the <a href="https://www.mate-look.org/p/2131750">Space Light GTK theme</a>.</p>
+                    <h3>Circular Scrolling</h3>
+                    <p>Even in the pre-installed Windows, circular scrolling wasn't working out of the box. Likely the reseller never installed the proper Windows drivers. And neither did I.</p>
+                    <p>To get circular scrolling to work on Linux, you have to use X11 with Synaptics drivers (instead of Wayland, which was running by default) since libinput does not support the feature. There's <a href="https://wiki.archlinux.org/title/Panasonic_CF-SV9">information about this on the Arch Linux wiki</a> for a different model of the Let's Note but the idea is the same.</p>
+                    <p>The Fedora MATE+Compiz spin I had installed seemed to have the drivers included, but in order to run X11 so that the trackpad could be used, I had to install SDDM:</p>
+                    <div class="code_block"><pre>sudo dnf install sddm-x11</pre></div>
+                    <p>Then, I created the a configuration file <span class="code_inline">/etc/X11/xorg.conf.d/70-synaptics.conf</span> similar to the Arch Linux wiki, though I removed the edge boundaries:</p>
+                    <div class="code_block"><pre>Section "InputClass"
+    Identifier "touchpad catchall"
+    Driver "synaptics"
+    MatchIsTouchpad "on"
+    MatchDevicePath "/dev/input/event*"
+    Option "TapButton1" "1"
+    Option "TapButton2" "3"
+    Option "TapButton3" "2"
+    Option "CircularScrolling" "on"
+    Option "CircScrollTrigger" "0"
+    Option "CircularPad" "on"
+EndSection</pre></div>
+                <p>After restarting the laptop, X11 was running and circular scrolling works.</p>
+                </div>
+                <br/>
+                <div class="links">
+                    <p><a href="../notebook.html">Return</a></p>
+                </div>
+                <br/>       
+            </div>
+            <br/>
+			<br/>
+            <br/>
+        </div>
+    </body>
+</html>
