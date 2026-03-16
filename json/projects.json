@@ -589,5 +589,22 @@
             "godot",
             "gdscript"
         ]
+    },
+    {
+        "file": "der-narrenmarsch",
+        "name": "Der Narrenmarsch",
+        "body": "<p>During late February of 2025, I had the opportunity to visit Nicholas in Freiburg im Breisgau, Germany, during their study abroad. I went for only 10 days, but happened to be there for the 2025 <a href=\"https://en.wikipedia.org/wiki/Swabian-Alemannic_Fastnacht\">Freiburg Fasnat</a>. It was a remarkable experience to see all the different kinds of costumes and sounds and celebrations of folklore. I also learned how to play Skat during that trip, and among the most memorable experiences was playing Skat in a little cafe on the <a href=\"https://en.wikipedia.org/wiki/Sch%C3%B6nberg_(Ebringen)\">Sch&ouml;nberg</a>. This trip made a lasting impact on me, especially for the wonderful public transit and pedestrianized old city in Freiburg. It's a remarkably beautiful city.</p><p>I reached out to Nicholas in early January with the idea of doing the Global Game Jam together. The theme was \"Mask,\" which brought to mind the Fasnat, but we struggled to think of a game just based on that. I had been meaning to go into this jam to make either a puzzle game or a digital board game, and we ended up going with the latter, theming it around the Freiburg Fasnat. Thus, Der Narrenmarsch was born.</p><p>The game turned out to be quite complicated mechanically. We didn't actually get much done during the weekend of the Global Game Jam due to our respective obligations. We developed it mostly during the week that followed, finally adding finishing touches and releasing it mid-March. I think Der Narrenmarsch is a lovely little tribute to that experience we shared almost exactly the year before we made it.</p>",
+        "links": [
+            {
+                "url": "https://musahaydar.itch.io/narrenmarsch",
+                "text": "download and play the demo on Itch.io"
+            }
+        ],
+        "icon_names": [
+            "game",
+            "jam",
+            "godot",
+            "gdscript"
+        ]
     }
 ]
